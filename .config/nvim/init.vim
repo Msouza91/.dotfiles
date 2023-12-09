@@ -62,6 +62,7 @@ nnoremap <leader>gd :Gvdiffsplit<CR>
 
 "Nerd Tree configuration
 nnoremap <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 "Treesitter configuration
 lua <<EOF
