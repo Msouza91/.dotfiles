@@ -36,6 +36,8 @@ Plug 'f-person/auto-dark-mode.nvim'
 Plug 'GeekMasher/securitree.nvim'
 "Tokyonight
 Plug 'folke/tokyonight.nvim'
+"Nord
+Plug 'shaunsingh/nord.nvim'
 
 call plug#end()	
 
@@ -83,10 +85,12 @@ auto_dark_mode.setup({
 	set_dark_mode = function()
 		vim.api.nvim_set_option('background', 'dark')
 		vim.cmd('colorscheme tokyonight-storm')
+		vim.cmd('AirlineTheme violet')
 	end,
 	set_light_mode = function()
 		vim.api.nvim_set_option('background', 'light')
 		vim.cmd('colorscheme tokyonight-day')
+		vim.cmd('AirlineTheme sol')
 	end,
 })
 EOF
