@@ -112,8 +112,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
- alias zshconfig="code-insiders ~/.zshrc"
- alias ohmyzsh="code-insiders ~/.oh-my-zsh"
+ alias zshconfig="vim ~/.zshrc"
+ alias ohmyzsh="vim ~/.oh-my-zsh"
  alias tf="terraform"
  alias vim="nvim"
 
