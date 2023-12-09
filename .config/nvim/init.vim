@@ -50,7 +50,8 @@ let g:airline_powerline_fonts = 1
 "Fzf Lua configuration
 nnoremap <C-p> <cmd>lua require('fzf-lua').files()<CR>
 nnoremap <C-b> <cmd>lua require('fzf-lua').buffers()<CR>
-nnoremap <C-g> <cmd>lua require('fzf-lua').grep_visual()<CR>
+nnoremap <C-h> <cmd>lua require('fzf-lua').grep_cword()<CR>
+nnoremap <C-H> <cmd>lua require('fzf-lua').grep_visual()<CR>
 
 "Vim Fugitive configuration
 nnoremap <leader>gs :Git<CR>
