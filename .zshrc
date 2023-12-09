@@ -15,6 +15,31 @@ export EDITOR='vim'				# Set default editor
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
 
+### PATH
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "/var/lib/flatpak/exports/bin/" ] ;
+  then PATH="/var/lib/flatpak/exports/bin/:$PATH"
+fi
+
+### SETTING OTHER ENVIRONMENT VARIABLES
+if [ -z "$XDG_CONFIG_HOME" ] ; then
+    export XDG_CONFIG_HOME="$HOME/.config"
+fi
+if [ -z "$XDG_DATA_HOME" ] ; then
+    export XDG_DATA_HOME="$HOME/.local/share"
+fi
+if [ -z "$XDG_CACHE_HOME" ] ; then
+    export XDG_CACHE_HOME="$HOME/.cache"
+fi
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -100,11 +125,41 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+
  alias zshconfig="vim ~/.zshrc"
  alias ohmyzsh="vim ~/.oh-my-zsh"
  alias tf="terraform"
  alias vim="nvim"
+ 
+# Changing "ls" to "eza"
+ alias ls='eza -al --color=always --group-directories-first' # my preferred listing
+ alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+ alias ll='eza -l --color=always --group-directories-first'  # long format
+ alias lt='eza -aT --color=always --group-directories-first' # tree listing
+ alias l.='eza -a | egrep "^\."'
+
+# Colorize grep output (good for log files)
+ alias grep='grep --color=auto'
+ alias egrep='egrep --color=auto'
+ alias fgrep='fgrep --color=auto'
+
+# git
+ alias addup='git add -u'
+ alias addall='git add .'
+ alias branch='git branch'
+ alias checkout='git checkout'
+ alias clone='git clone'
+ alias commit='git commit -m'
+ alias fetch='git fetch'
+ alias pull='git pull origin'
+ alias push='git push origin'
+ alias stat='git status'  # 'status' is protected name so using 'stat' instead
+ alias tag='git tag'
+ alias newtag='git tag -a'
+ alias uncommit='git reset --soft HEAD~1'
+
+
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -114,3 +169,6 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(zoxide init zsh)"
 # Activate SSH-Agent
 {eval "$(ssh-agent)"} &> /dev/null
+
+#colorscript
+colorscript random
