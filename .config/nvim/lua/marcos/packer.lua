@@ -7,10 +7,11 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-	use { "ibhagwan/fzf-lua",
-	-- optional for icon support
-	requires = { "nvim-tree/nvim-web-devicons" }
-	}
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 	use 'f-person/auto-dark-mode.nvim'
 	--Themes
 	use 'shaunsingh/nord.nvim'
@@ -19,6 +20,7 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = function()
@@ -26,6 +28,7 @@ return require('packer').startup(function(use)
 			ts_update()
 		end,
 	    }
+
 	use('github/copilot.vim')
 	use('tpope/vim-fugitive')
 	use('mbbill/undotree')
