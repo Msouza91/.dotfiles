@@ -15,8 +15,10 @@ return require('packer').startup(function(use)
 	--Themes
 	use 'shaunsingh/nord.nvim'
 	use 'folke/tokyonight.nvim'
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = function()
