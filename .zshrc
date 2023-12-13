@@ -169,7 +169,7 @@ export NVM_DIR="$HOME/.nvm"
 # Activate zoxide
 eval "$(zoxide init zsh)"
 # Activate SSH-Agent
-#{eval "$(ssh-agent)"} &> /dev/null
+{eval "$(ssh-agent)"} &> /dev/null
 
 #colorscript
 colorscript random
