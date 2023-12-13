@@ -17,3 +17,5 @@
       - Treesitter
 
 
+### Agradecimentos a [WillPower3309](https://github.com/WillPower3309/awesome-dotfiles) de onde peguei a base do tema do AwesomeWM e pretendo ir customizando conforme minhas necessidades.
+
