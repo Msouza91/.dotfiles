@@ -31,7 +31,7 @@ apps = {
    power_manager = "xfce4-power-manager", -- recommended: xfce4-power-manager
    terminal = "alacritty",
    launcher = "rofi -normal-window -modi drun -show drun -theme " .. theme_config_dir .. "rofi.rasi",
-   lock = "i3lock",
+   lock = "i3lock-pretty",
    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
    filebrowser = "nautilus"
 }
