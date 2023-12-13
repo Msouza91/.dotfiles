@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"			# Path to your oh-my-zsh installation.
 export PATH="$HOME/.local/bin:$PATH"		# Include home local bin
 export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
 export EDITOR='vim'				# Set default editor
-export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+export QT_STYLE_OVERRIDE="kvantum"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
