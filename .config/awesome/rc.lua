@@ -33,14 +33,16 @@ apps = {
    launcher = "rofi -normal-window -modi drun -show drun -theme " .. theme_config_dir .. "rofi.rasi",
    lock = "i3lock-pretty",
    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
-   filebrowser = "nautilus"
+   filebrowser = "nautilus",
+   airpods = "airpods_toggle",
+   one_drive = "onedriver&"
 }
 
 -- define wireless and ethernet interface names for the network widget
 -- use `ip link` command to determine these
 network_interfaces = {
-   wlan = 'wlp1s0',
-   lan = 'enp1s0'
+   wlan = 'wlp0s20f3',
+   lan = 'enp0s31f6'
 }
 
 -- List of apps to run on start-up
@@ -48,7 +50,7 @@ local run_on_start_up = {
    "picom --experimental-backends --config " .. theme_config_dir .. "picom.conf",
    "redshift",
    "unclutter",
-   "onedriver&"
+   "one_drive"
 }
 
 
