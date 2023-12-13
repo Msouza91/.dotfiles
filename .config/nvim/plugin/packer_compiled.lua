@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/marcos/.local/share/nvim/site/pack/packer/start/auto-dark-mode.nvim",
     url = "https://github.com/f-person/auto-dark-mode.nvim"
   },
+  ["battery.nvim"] = {
+    loaded = true,
+    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/battery.nvim",
+    url = "https://github.com/justinhj/battery.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/marcos/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -170,9 +175,8 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/marcos/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
