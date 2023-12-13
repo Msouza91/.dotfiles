@@ -1,7 +1,24 @@
 window:
   opacity: 0.75
-colorscheme: tokyo-night-storm
 
+# Font Config
+Font:
+# Normal (roman):
+  normal:
+    family: CaskaydiaCoveNerdFontMono-Regular
+    style: Regular
+  bold:
+    family: CaskaydiaCoveNerdFontMono-Bold
+    style: Bold
+  italic: 
+    family: CaskaydiaCoveNerdFontMono-Italic
+    style: Italic
+  bold_italic:
+    family: CaskaydiaCoveNerdFontMono-BoldItalic
+    style: Bold Italic
+
+
+colorscheme: tokyo-night-storm
 schemes:
 
   tokyo-night-storm: &tokyo-night-storm
