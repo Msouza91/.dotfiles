@@ -1,0 +1,13 @@
+#! /bin/sh
+#
+# Check if AirPods are connected and disconnect if they are, connect if they are not.
+
+MAC_ADDRESS="00:C5:85:61:FD:E5" # Change to your AirPods MAC Address
+
+STATE=$(hcitool con | grep $MAC_ADDRESS | cut -d ' ' -f 7)
+
+if [ -z "$STATE" ]; then
+    bluetoothctl connect $MAC_ADDRESS
+else
+    bluetoothctl disconnect $MAC_ADDRESS
+fi
