@@ -8,6 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"			# Path to your oh-my-zsh installation.
 export PATH="$HOME/.local/bin:$PATH"		# Include home local bin
 export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
 export EDITOR='vim'				# Set default editor
+export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -168,7 +169,7 @@ export NVM_DIR="$HOME/.nvm"
 # Activate zoxide
 eval "$(zoxide init zsh)"
 # Activate SSH-Agent
-{eval "$(ssh-agent)"} &> /dev/null
+#{eval "$(ssh-agent)"} &> /dev/null
 
 #colorscript
 colorscript random
