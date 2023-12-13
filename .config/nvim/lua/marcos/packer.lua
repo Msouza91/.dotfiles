@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
     use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+    use 'nvim-tree/nvim-web-devicons'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -64,5 +65,9 @@ return require('packer').startup(function(use)
 	}
     use 'GeekMasher/securitree.nvim'
     use 'preservim/nerdcommenter'
+    use { 'justinhj/battery.nvim', requires = {
+        {'nvim-tree/nvim-web-devicons'},
+        {'nvim-lua/plenary.nvim'}}
+    }
 
 end)
