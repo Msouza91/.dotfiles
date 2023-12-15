@@ -215,6 +215,12 @@ keys.globalkeys = gears.table.join(
          awful.util.spawn(apps.screenshot, false)
       end
    ),
+   -- Screenshot on selected area prtscn using scrot
+   awful.key({"Shift"}, "Print",
+      function()
+         awful.util.spawn(apps.screenshot_select, false)
+      end
+   ),
 
    -- =========================================
    -- CUSTOM KEY BINDINGS

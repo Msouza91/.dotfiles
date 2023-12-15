@@ -33,6 +33,7 @@ apps = {
    launcher = "rofi -normal-window -modi drun -show drun -theme " .. theme_config_dir .. "rofi.rasi",
    lock = "i3lock-pretty",
    screenshot = "scrot -e 'mv $f ~/Imagens/ 2>/dev/null'",
+   screenshot_select = "scrot -s -l opacity=0 -e 'mv $f ~/Imagens/ 2>/dev/null'",
    filebrowser = "nautilus",
    airpods = "airpods_toggle",
    one_drive = "onedriver&"
