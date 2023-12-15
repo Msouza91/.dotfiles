@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
     use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
     use 'nvim-tree/nvim-web-devicons'
+    use 'Bekaboo/deadcolumn.nvim'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',

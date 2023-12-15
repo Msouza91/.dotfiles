@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/marcos/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["deadcolumn.nvim"] = {
+    loaded = true,
+    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/deadcolumn.nvim",
+    url = "https://github.com/Bekaboo/deadcolumn.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/marcos/.local/share/nvim/site/pack/packer/start/friendly-snippets",
