@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 
 	use 'f-person/auto-dark-mode.nvim'
 	--Themes
-	use 'shaunsingh/nord.nvim'
+	use 'rose-pine/neovim'
 	use 'folke/tokyonight.nvim'
     use {
         'nvim-lualine/lualine.nvim',
