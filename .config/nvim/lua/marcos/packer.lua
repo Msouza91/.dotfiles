@@ -4,11 +4,18 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
     use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
     use 'nvim-tree/nvim-web-devicons'
     use 'Bekaboo/deadcolumn.nvim'
+    use({
+        "epwalsh/obsidian.nvim",
+        tag = "*",  -- recommended, use latest release instead of latest commit
+        requires = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+        }})
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
