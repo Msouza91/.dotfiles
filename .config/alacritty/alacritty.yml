@@ -1,6 +1,21 @@
 window:
   opacity: 0.75
 
+font:
+  normal:
+    family: CaskaydiaCoveNerdFont
+    style: Regular
+  bold:
+    family: CaskaydiaCoveNerdFont
+    style: Bold
+  italic:
+    family: CaskaydiaCoveNerdFont
+    style: Italic
+  bold_italic:
+    family: CaskaydiaCoveNerdFont
+    style: Bold Italic
+  size: 11
+
 colorscheme: rose-pine
 schemes:
   rose-pine:
