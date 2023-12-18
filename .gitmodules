@@ -1,3 +1,6 @@
 [submodule ".config/ranger/plugins/ranger_devicons"]
 	path = .config/ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons.git
+[submodule ".local/bin/stylepack"]
+	path = .local/bin/stylepack
+	url = https://github.com/refi64/stylepak.git
