@@ -36,7 +36,8 @@ apps = {
    screenshot_select = "scrot -s -l mode=edge -e 'xclip -selection clipboard -t image/png -i $f' -F '/home/marcos/Imagens/%Y-%m-%d_$wx$h.png'",
    filebrowser = "nautilus",
    airpods = "airpods_toggle",
-   one_drive = "onedriver&"
+   one_drive = "onedriver&",
+   bt_manager = "blueman-manager"
 }
 
 -- define wireless and ethernet interface names for the network widget

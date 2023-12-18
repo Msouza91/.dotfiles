@@ -233,6 +233,12 @@ keys.globalkeys = gears.table.join(
       {description = "connect airpod", group = "custom"}
    ),
 
+   awful.key({modkey}, "b",
+      function()
+         awful.util.spawn(apps.bt_manager, false)
+      end,
+      {description = "connect airpod", group = "custom"}
+   ),
 
    -- =========================================
    -- RELOAD / QUIT AWESOME
