@@ -4,8 +4,8 @@
 sanitize tridactyllocal tridactylsync
 
 " native messenger stuff
-guiset tabs autohide
-guiset navbar autohide
+guiset_quiet tabs autohide
+guiset_quiet navbar autohide
 
 " Smooth scrolling, yes please. This is still a bit janky in Tridactyl.
 set smoothscroll true
