@@ -223,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcos/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-tridactyl"] = {
+    loaded = true,
+    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/vim-tridactyl",
+    url = "https://github.com/tridactyl/vim-tridactyl"
   }
 }
 

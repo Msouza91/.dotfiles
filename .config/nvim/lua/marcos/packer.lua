@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
     use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
     use 'nvim-tree/nvim-web-devicons'
     use 'Bekaboo/deadcolumn.nvim'
+    use 'tridactyl/vim-tridactyl'
     use({
         "epwalsh/obsidian.nvim",
         tag = "*",  -- recommended, use latest release instead of latest commit

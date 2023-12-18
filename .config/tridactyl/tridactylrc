@@ -1,0 +1,72 @@
+" This wipes all existing settings. This means that if a setting in this file
+" is removed, then it will return to default. In other words, this file serves
+" as an enforced single point of truth for Tridactyl's configuration.
+sanitize tridactyllocal tridactylsync
+
+" Smooth scrolling, yes please. This is still a bit janky in Tridactyl.
+set smoothscroll true
+
+" Search engines
+set searchengine g
+
+" Disable all searchurls
+jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=>{}).then(_ => tri.excmds.setnull("searchurls." + u)), Promise.resolve())
+" Set our own searchurls
+set searchurls.g https://www.google.com/search?q=%s
+set searchurls.gmaps https://www.google.com/maps/search/%s
+set searchurls.w https://en.wikipedia.org/wiki/Special:Search?search=%s
+set searchurls.y https://www.youtube.com/results?search_query=%s
+set searchurls.amazon https://www.amazon.com.br/s/ref=nb_sb_noss?field-keywords=%s
+
+
+" The default jump of 10 is a bit much.
+bind j scrollline 5
+bind k scrollline -5
+
+" Git{Hub,Lab} git clone via SSH yank
+bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+
+" make d take you to the left (I find it much less confusing)
+bind d composite tabprev; tabclose #
+bind D tabclose
+
+" Open right click menu on links
+bind ;C composite hint_focus; !s xdotool key Menu
+ 
+" Binds for new reader mode
+bind gr reader
+bind gR reader --tab
+
+" Sane hinting mode
+set hintfiltermode vimperator-reflow
+
+" Inject Google Translate
+" This (clearly) is remotely hosted code. Google will be sent the whole
+" contents of the page you are on if you run `:translate`
+" From https://github.com/jeremiahlee/page-translator
+command translate js let googleTranslateCallback = document.createElement('script'); googleTranslateCallback.innerHTML = "function googleTranslateElementInit(){ new google.translate.TranslateElement(); }"; document.body.insertBefore(googleTranslateCallback, document.body.firstChild); let googleTranslateScript = document.createElement('script'); googleTranslateScript.charset="UTF-8"; googleTranslateScript.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&tl=&sl=&hl="; document.body.insertBefore(googleTranslateScript, document.body.firstChild);
+
+" https://github.com/tridactyl/tridactyl/issues/1212
+set customthemes.custom span.TridactylHint { font-family: monospace !important; background: transparent !important; color: black !important; text-shadow: cyan -1px -1px 0px, cyan -1px 0px 0px, cyan -1px 1px 0px, cyan 1px -1px 0px, cyan 1px 0px 0px, cyan 1px 1px 0px, cyan 0px 1px 0px, cyan 0px -1px 0px !important; }
+set customthemes.custom span.TridactylHint { background: repeating-linear-gradient(45deg, #3f87a6, #ebf8e1 15%, #f69d3c 20%) !important; }
+
+" ** Youtube
+" https://github.com/glacambre/.dotfiles/blob/master/default/.config/tridactyl/tridactylrc
+" disable hints for invisible elements (no js hinting)
+bindurl youtu((\.be)|(be\.com)) f hint -J
+bindurl youtu((\.be)|(be\.com)) F hint -b -J
+bindurl youtu((\.be)|(be\.com)) tf hint -t -J
+
+" ** Google
+" limit selectable links on google
+" https://github.com/glacambre/.dotfiles/blob/master/default/.config/tridactyl/tridactylrc
+bindurl google(\.[a-zA-Z0-9]+){1,2}/search f hint -Jc #top_nav a, #search a, .card-section a, a.fl, #pnnext, #pnprev
+bindurl google(\.[a-zA-Z0-9]+){1,2}/search F hint -Jbc #top_nav a, #search a, .card-section a, a.fl, #pnnext, #pnprev
+bindurl google(\.[a-zA-Z0-9]+){1,2}/search tf hint -Jtc #top_nav a, #search a, .card-section a, a.fl, #pnnext, #pnprev
+bindurl google(\.[a-zA-Z0-9]+){1,2}/search gF hint -Jqbc #top_nav a, #search a, .card-section a, a.fl, #pnnext, #pnprev
+
+" ** Readwise reader
+" disable some bindings for better UX
+unbindurl read\.readwise\.io/ --mode=normal j
+unbindurl read\.readwise\.io/ --mode=normal k
+unbindurl read\.readwise\.io/ --mode=normal a
