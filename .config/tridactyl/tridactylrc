@@ -74,3 +74,7 @@ bindurl google(\.[a-zA-Z0-9]+){1,2}/search gF hint -Jqbc #top_nav a, #search a, 
 unbindurl read\.readwise\.io/ --mode=normal j
 unbindurl read\.readwise\.io/ --mode=normal k
 unbindurl read\.readwise\.io/ --mode=normal a
+
+" Sometimes the status bar in the bottom left corner overlaps the Tridactyl
+" command line, so set an option to move the status bar to the right.
+guiset_quiet hoverlink right

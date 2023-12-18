@@ -1,0 +1,4 @@
+[Added Associations]
+font/ttf=org.gnome.font-viewer.desktop;
+image/png=com.github.PintaProject.Pinta.desktop;
+application/pdf=org.pwmt.zathura.desktop;
