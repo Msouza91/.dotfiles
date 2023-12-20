@@ -1,0 +1,10 @@
+[Unit]
+Description=[Service for indicator-cpufreq]
+
+[Service]
+Type=simple
+StandardOutput=journal
+ExecStart=/usr/bin/indicator-cpufreq
+
+[Install]
+WantedBy=default.target

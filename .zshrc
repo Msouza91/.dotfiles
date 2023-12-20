@@ -7,7 +7,7 @@ export HISTCONTROL=ignoredups:erasedups		# no duplicate entries
 export ZSH="$HOME/.oh-my-zsh"			# Path to your oh-my-zsh installation.
 export PATH="$HOME/.local/bin:$PATH"		# Include home local bin
 export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
-export EDITOR='vim'				# Set default editor
+export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
 
 # Set name of the theme to load --- if set to "random", it will
