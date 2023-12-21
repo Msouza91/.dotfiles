@@ -5,6 +5,8 @@ Description=[Service for indicator-cpufreq]
 Type=simple
 StandardOutput=journal
 ExecStart=/usr/bin/indicator-cpufreq
+After=graphical.target
+Restart=on-failure
 
 [Install]
 WantedBy=default.target
