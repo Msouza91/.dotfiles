@@ -15,7 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    { 'nvim-tree/nvim-web-devicons' },
     { 'Bekaboo/deadcolumn.nvim' },
     { 'tridactyl/vim-tridactyl' },
     { "epwalsh/obsidian.nvim",
@@ -35,10 +34,11 @@ local plugins = {
         dependencies = { {"nvim-lua/plenary.nvim"} }
     },
 
-	{ 'f-person/auto-dark-mode.nvim' },
 	--Themes
-	{ 'rose-pine/neovim' },
-	{ 'folke/tokyonight.nvim' },
+	{ 'f-person/auto-dark-mode.nvim',
+        dependencies = { 'rose-pine/neovim' }
+    },
+
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
