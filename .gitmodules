@@ -4,3 +4,6 @@
 [submodule ".local/bin/stylepack"]
 	path = .local/bin/stylepack
 	url = https://github.com/refi64/stylepak.git
+[submodule ".local/src/goplay"]
+	path = .local/src/goplay
+	url = https://github.com/openairplay/goplay2.git
