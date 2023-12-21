@@ -10,7 +10,7 @@ require'nvim-treesitter.configs'.setup {
       "yaml",
       "json",
       "markdown",
-      "markdown_inline"
+      "markdown_inline",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
