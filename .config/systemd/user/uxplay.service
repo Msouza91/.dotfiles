@@ -1,0 +1,13 @@
+[Unit]
+Description=[Service for uxplay]
+
+[Service]
+Type=simple
+StandardOutput=journal
+ExecStart=/usr/bin/uxplay \
+    -avdec \
+    -nh \
+    -m 
+
+[Install]
+WantedBy=default.target
