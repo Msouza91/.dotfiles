@@ -58,7 +58,7 @@ dependencies = { {"nvim-lua/plenary.nvim"} }
 {('tpope/vim-fugitive') },
 {('mbbill/undotree') },
 { 'VonHeikemen/lsp-zero.nvim',
-branch = 'v1.x',
+branch = 'v3.x',
 dependencies = {
     -- LSP Support
     {'neovim/nvim-lspconfig'},
