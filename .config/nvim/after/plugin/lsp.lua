@@ -2,33 +2,46 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'terraformls',
-  'yamlls',
-  'golangci_lint_ls',
-  'lua_ls',
-})
+--- Setup Mason LSP Install
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'terraformls',
+        'yamlls',
+        'golangci_lint_ls',
+        'lua_ls',
+        'azure_pipelines_ls',
+        'eslint',
+        'dockerls',
+        'docker_compose_language_service',
+        'bashls',
+    },
+    handlers = {
+      lsp.default_setup,
+      lua_ls = function()
+        local lua_opts = lsp.nvim_lua_ls()
+        require('lspconfig').lua_ls.setup(lua_opts)
+      end,
+    },
+  })
 
--- Fix Undefined global 'vim'
-lsp.nvim_workspace()
-
-
+--- Setup cmp completion
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-})
+local cmp_action = require('lsp-zero').cmp_action()
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+  cmp.setup({
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-n>'] = cmp_action.luasnip_jump_forward(),
+      ['<C-p>'] = cmp_action.luasnip_jump_backward(),
+    })
+  })
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
-
+--- Setup Mapping and some prferences
 lsp.set_preferences({
     suggest_lsp_servers = false,
     sign_icons = {
