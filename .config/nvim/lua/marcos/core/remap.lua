@@ -26,10 +26,15 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- grant execute permission
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/.config/nvim/lua/marcos/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/.config/nvim/lua/marcos/plugins<CR>");
 
+-- source file
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
+end)
+-- Lazy window
+vim.keymap.set("n", "<leader>l", function()
+    vim.cmd("Lazy")
 end)
 
 -- Obsidian
