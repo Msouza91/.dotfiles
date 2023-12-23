@@ -49,18 +49,30 @@ return {
 
         --- Setup cmp completion
         local cmp = require('cmp')
-        local cmp_action = require('lsp-zero').cmp_action()
+        local cmp_format = require('lsp-zero').cmp_format()
 
         cmp.setup({
+            formatting = cmp_format,
             window = {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-Space>'] = cmp.mapping.complete(),
-                ['<C-n>'] = cmp_action.luasnip_jump_forward(),
-                ['<C-p>'] = cmp_action.luasnip_jump_backward(),
+                ['<C-n>'] = cmp.mapping.select_next_item(),
+                ['<C-p>'] = cmp.mapping.select_prev_item(),
+                ['<C-e>'] = cmp.mapping.close(),
+                ['<C-y>'] = cmp.mapping.confirm({select = false}),
+                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-d>'] = cmp.mapping.scroll_docs(4),
             }),
+            sources = {
+                {name = 'nvim_lsp'},
+                {name = 'luasnip', keyword_length = 2},
+                {name = 'buffer', keyword_length = 3},
+                {name = 'path'},
+                {name = 'nvim_lua'},
+            },
         })
 
         --- Setup Mapping and some prferences
