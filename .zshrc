@@ -131,6 +131,12 @@ source $ZSH/oh-my-zsh.sh
  alias ohmyzsh="vim ~/.oh-my-zsh"
  alias tf="terraform"
  alias vim="nvim"
+
+ # Copilot CLI
+alias copilot='gh copilot'
+alias gcs='gh copilot suggest'
+alias gce='gh copilot explain'
+
  
 # Changing "ls" to "eza"
  alias ls='eza -al --color=always --group-directories-first' # my preferred listing
