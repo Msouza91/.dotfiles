@@ -7,7 +7,6 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
         'terraformls',
-        'yamlls',
         'golangci_lint_ls',
         'lua_ls',
         'azure_pipelines_ls',
