@@ -1,3 +1,3 @@
-require("marcos.remap")
+require("marcos.core.remap")
+require("marcos.core.set")
 require("marcos.lazy")
-require("marcos.set")
