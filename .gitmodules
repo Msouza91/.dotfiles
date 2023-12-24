@@ -7,3 +7,6 @@
 [submodule ".local/src/goplay"]
 	path = .local/src/goplay
 	url = https://github.com/openairplay/goplay2.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

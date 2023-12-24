@@ -2,3 +2,4 @@
 font/ttf=org.gnome.font-viewer.desktop;
 image/png=com.github.PintaProject.Pinta.desktop;
 application/pdf=org.pwmt.zathura.desktop;
+application/x-x509-ca-cert=org.gnome.gedit.desktop;
