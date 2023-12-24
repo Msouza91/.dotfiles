@@ -5,7 +5,7 @@
   - Configurar playbook pra instalar os softwares para carregar as configurações
     * AwesomeWM
     * Packer
-    * light _remember it needs sudo_
+    * light _remember it needs sudo so create the visudo entry_
     * picom
     * bluez
     * bluez-tools
@@ -21,6 +21,8 @@
     * Spaceship
     * Neovim
     * Tmux
+        - Criar ~/.config/tmux/plugins pra evitar que stow mapeie a pasta toda
+        e clone os repos do plugin sem ser submódulo
     * UxPlay
     * Asdf
     * libssl-dev
