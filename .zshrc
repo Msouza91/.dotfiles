@@ -165,7 +165,10 @@ alias gce='gh copilot explain'
  alias newtag='git tag -a'
  alias uncommit='git reset --soft HEAD~1'
 
-
+# tmux session
+alias tma='tmux attach -t'
+alias tml='tmux ls'
+alias tms='tmux new -s'
 
 
 export NVM_DIR="$HOME/.nvm"
