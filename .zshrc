@@ -166,7 +166,9 @@ alias gce='gh copilot explain'
  alias uncommit='git reset --soft HEAD~1'
 
 # tmux session
-alias tms='tmux-sessionizer'
+alias tma='tmux attach -t'
+alias tml='tmux ls'
+alias tms='tmux new -s'
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -177,11 +179,6 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(zoxide init zsh)"
 # Activate SSH-Agent
 {eval "$(ssh-agent) && ssh-add ~/.ssh/id_ed25519"} &> /dev/null
-
-# Start tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  tmux a -t default || exec tmux new -s default && exit;
-fi
 
 #colorscript
 colorscript random
