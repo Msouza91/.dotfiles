@@ -180,5 +180,10 @@ eval "$(zoxide init zsh)"
 # Activate SSH-Agent
 {eval "$(ssh-agent) && ssh-add ~/.ssh/id_ed25519"} &> /dev/null
 
+# Start tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  tmux a -t default || exec tmux new -s default && exit;
+fi
+
 #colorscript
 colorscript random
