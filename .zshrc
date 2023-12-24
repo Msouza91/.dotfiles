@@ -166,9 +166,7 @@ alias gce='gh copilot explain'
  alias uncommit='git reset --soft HEAD~1'
 
 # tmux session
-alias tma='tmux attach -t'
-alias tml='tmux ls'
-alias tms='tmux new -s'
+alias tms='tmux-sessionizer'
 
 
 export NVM_DIR="$HOME/.nvm"
