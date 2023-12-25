@@ -23,6 +23,8 @@
     * Tmux
         - Criar ~/.config/tmux/plugins pra evitar que stow mapeie a pasta toda
         e clone os repos do plugin sem ser submódulo
+    * Tmate
+    * FZF (Script install from tag https://raw.githubusercontent.com/junegunn/fzf/0.44.1/install)
     * UxPlay
     * Asdf
     * libssl-dev
