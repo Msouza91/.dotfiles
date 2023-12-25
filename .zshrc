@@ -170,6 +170,9 @@ alias tma='tmux attach -t'
 alias tml='tmux ls'
 alias tms='tmux new -s'
 
+# tmate security
+alias tmate='tmate -a ~/.ssh/tmate-keys'
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
