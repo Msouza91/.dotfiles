@@ -44,6 +44,24 @@ return {
                     local lua_opts = lsp.nvim_lua_ls()
                     require('lspconfig').lua_ls.setup(lua_opts)
                 end,
+                azure_pipelines_ls = function()
+                    local azure_pipelines_opts = {
+                        settings = {
+                            yaml = {
+                                schemas = {
+                                    ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
+                                        "/azure-pipeline*.y*l",
+                                        "/*.azure*",
+                                        "Azure-Pipelines/**/*.y*l",
+                                        "Pipelines/*.y*l",
+                                        "cap/**/*.y*l",
+                                    },
+                                },
+                            },
+                        },
+                    }
+                    require('lspconfig').azure_pipelines_ls.setup(azure_pipelines_opts)
+                end,
             },
         })
 
