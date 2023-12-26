@@ -31,6 +31,7 @@ return {
             ensure_installed = {
                 'terraformls',
                 'gopls',
+                'yamlls',
                 'lua_ls',
                 'azure_pipelines_ls',
                 'eslint',
