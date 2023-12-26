@@ -23,7 +23,9 @@ local mirage = {}
 
 mirage.initialize = function()
    -- Set Wallpaper
-   gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper/abstract.jpg")
+   --gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper/abstract.jpg")
+   awful.util.spawn(apps.setbg, false)
+
 
    -- Import components
    require("components.exit-screen")

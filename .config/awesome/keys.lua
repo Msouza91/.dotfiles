@@ -237,14 +237,21 @@ keys.globalkeys = gears.table.join(
       function()
          awful.util.spawn(apps.bt_manager, false)
       end,
-      {description = "connect airpod", group = "custom"}
+      {description = "open blueman", group = "custom"}
    ),
 
    awful.key({modkey}, "e",
       function()
          awful.util.spawn(apps.terminal.." -e ranger")
       end,
-      {description = "connect airpod", group = "custom"}
+      {description = "open ranger", group = "custom"}
+   ),
+
+   awful.key({modkey}, "w",
+      function()
+         awful.util.spawn(apps.setbg)
+      end,
+      {description = "chg wallpaper", group = "custom"}
    ),
 
    -- =========================================

@@ -37,7 +37,8 @@ apps = {
    filebrowser = "nautilus",
    airpods = "airpods_toggle",
    one_drive = "onedriver&",
-   bt_manager = "blueman-manager"
+   bt_manager = "blueman-manager",
+   setbg = "setbg ~/.config/awesome/wallpaper/rose-pine",
 }
 
 -- define wireless and ethernet interface names for the network widget
@@ -52,7 +53,8 @@ local run_on_start_up = {
    "picom --experimental-backends --config " .. theme_config_dir .. "picom.conf",
    "redshift",
    "unclutter",
-   "one_drive"
+   "one_drive",
+   "setbg"
 }
 
 
