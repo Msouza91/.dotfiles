@@ -56,6 +56,7 @@ return {
                                         "Azure-Pipelines/**/*.y*l",
                                         "Pipelines/*.y*l",
                                         "cap/**/*.y*l",
+                                        "cap/*.y*l",
                                     },
                                 },
                             },
