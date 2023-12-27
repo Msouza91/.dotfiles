@@ -31,6 +31,7 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"terraformls",
+				"tflint",
 				"gopls",
 				"yamlls",
 				"lua_ls",
