@@ -4,6 +4,7 @@
   - Criar script que faz download das configurações e playbook para setup em um comando
   - Configurar playbook pra instalar os softwares para carregar as configurações
     * AwesomeWM
+    * xiccd (color profile)
     * Packer
     * light _remember it needs sudo so create the visudo entry_
     * picom
