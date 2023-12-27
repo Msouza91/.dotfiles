@@ -69,8 +69,8 @@ return {
 		})
 		require("mason-tool-installer").setup({
 			ensure_installed = {
-				"yamlfmt",
 				"stylua",
+				"prettier",
 			},
 		})
 

@@ -5,8 +5,9 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- Conform will run multiple formatters sequentially
-				yaml = { "yamlfmt" },
+				yaml = { "prettier" },
+				markdown = { "prettier" },
+				json = { "prettier" },
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()
