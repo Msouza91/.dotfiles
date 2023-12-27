@@ -53,6 +53,11 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- Terraform shortcuts
+vim.keymap.set("n", "<leader>ti", ":!terraform init<CR>")
+vim.keymap.set("n", "<leader>tv", ":!terraform validate<CR>")
+vim.keymap.set("n", "<leader>tp", ":!terraform plan<CR>")
+
 -- Obsidian
 vim.keymap.set("n", "<leader>o", function()
 	vim.cmd("ObsidianSearch")
