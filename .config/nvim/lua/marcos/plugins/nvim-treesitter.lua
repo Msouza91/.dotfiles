@@ -21,6 +21,7 @@ return {
 				"markdown",
 				"markdown_inline",
 			},
+			vim.treesitter.language.register("terraform", "terraform-vars"),
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
 			sync_install = false,
