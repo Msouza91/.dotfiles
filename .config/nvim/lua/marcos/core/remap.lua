@@ -17,11 +17,11 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- delete to black hole register
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- replace word under cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -29,11 +29,11 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- grant execute permission
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/.config/nvim/lua/marcos/plugins<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/.config/nvim/lua/marcos/plugins<CR>")
 
 -- source file
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
 
 -- tmux sessionizer
@@ -41,7 +41,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Lazy window
 vim.keymap.set("n", "<leader>l", function()
-    vim.cmd("Lazy")
+	vim.cmd("Lazy")
 end)
 
 -- Lsp Formatting
@@ -55,17 +55,17 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Obsidian
 vim.keymap.set("n", "<leader>o", function()
-    vim.cmd("ObsidianSearch")
+	vim.cmd("ObsidianSearch")
 end)
 vim.keymap.set("n", "<leader>od", function()
-    vim.cmd("ObsidianToday")
+	vim.cmd("ObsidianToday")
 end)
 vim.keymap.set("n", "<leader>oy", function()
-    vim.cmd("ObsidianYesterday")
+	vim.cmd("ObsidianYesterday")
 end)
 vim.keymap.set("n", "<leader>ot", function()
-    vim.cmd("ObsidianTomorrow")
+	vim.cmd("ObsidianTomorrow")
 end)
 vim.keymap.set("n", "<leader>op", function()
-    vim.cmd("ObsidianPasteImg")
+	vim.cmd("ObsidianPasteImg")
 end)

@@ -1,4 +1,4 @@
 return {
-    'preservim/nerdcommenter',
-    event = { "BufReadPre", "BufNewFile" },
+	"preservim/nerdcommenter",
+	event = { "BufReadPre", "BufNewFile" },
 }

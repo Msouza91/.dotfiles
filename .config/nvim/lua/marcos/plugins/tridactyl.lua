@@ -1,4 +1,4 @@
 return {
-    'tridactyl/vim-tridactyl',
-    event = 'BufRead tridactylrc',
+	"tridactyl/vim-tridactyl",
+	event = "BufRead tridactylrc",
 }
