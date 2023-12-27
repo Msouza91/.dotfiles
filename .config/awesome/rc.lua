@@ -39,6 +39,7 @@ apps = {
    one_drive = "onedriver&",
    bt_manager = "blueman-manager",
    setbg = "setbg ~/.config/awesome/wallpaper/rose-pine",
+   colorp = "xiccd",
 }
 
 -- define wireless and ethernet interface names for the network widget
@@ -54,7 +55,8 @@ local run_on_start_up = {
    "redshift",
    "unclutter",
    "one_drive",
-   "setbg"
+   "setbg",
+   "colorp"
 }
 
 
