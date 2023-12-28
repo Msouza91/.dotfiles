@@ -49,6 +49,10 @@ if [ -z "$XDG_CACHE_HOME" ] ; then
     export XDG_CACHE_HOME="$HOME/.cache"
 fi
 
+### Keybindings
+
+# Ctrl + f tmux-sessionizer
+bindkey -s '^f' '^utmux-sessionizer\n'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -111,9 +115,9 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git 
-    asdf 
-    kubectl 
+    git
+    asdf
+    kubectl
     zsh-autosuggestions
     zsh-syntax-highlighting
     )
@@ -146,7 +150,7 @@ alias copilot='gh copilot'
 alias gcs='gh copilot suggest'
 alias gce='gh copilot explain'
 
- 
+
 # Changing "ls" to "eza"
  alias ls='eza -al --color=always --group-directories-first' # my preferred listing
  alias la='eza -a --color=always --group-directories-first'  # all files and dirs
