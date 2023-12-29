@@ -72,6 +72,11 @@ return {
 			ensure_installed = {
 				"stylua",
 				"prettier",
+				"hadolint",
+				"eslint_d",
+				"tfsec",
+				"gofumpt",
+				"markdownlint",
 			},
 		})
 
