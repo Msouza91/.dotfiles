@@ -83,6 +83,7 @@ return {
 		--- Setup cmp completion
 		local cmp = require("cmp")
 		local cmp_format = require("lsp-zero").cmp_format()
+		local cmp_action = require("lsp-zero").cmp_action()
 
 		cmp.setup({
 			formatting = cmp_format,
@@ -98,6 +99,8 @@ return {
 				["<C-y>"] = cmp.mapping.confirm({ select = false }),
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
+				["<Tab>"] = cmp_action.luasnip_supertab(),
+				["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
 			}),
 			sources = {
 				{ name = "nvim_lsp" },
