@@ -74,3 +74,8 @@ end)
 vim.keymap.set("n", "<leader>op", function()
 	vim.cmd("ObsidianPasteImg")
 end)
+
+-- MD Preview
+vim.keymap.set("n", "<leader>md", function()
+	vim.cmd("MarkdownPreviewToggle")
+end)
