@@ -196,5 +196,14 @@ eval "$(zoxide init zsh)"
 # Activate SSH-Agent
 {eval "$(ssh-agent) && ssh-add ~/.ssh/id_ed25519"} &> /dev/null
 
+
+# pnpm
+export PNPM_HOME="/home/marcos/.local/share/pnpm"
+case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 #colorscript
 colorscript random
