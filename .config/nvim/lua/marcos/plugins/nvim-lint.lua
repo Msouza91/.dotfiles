@@ -12,6 +12,7 @@ return {
 			yaml = { "actionlint" },
 			terraform = { "tfsec", "tflint" },
 			markdown = { "markdownlint" },
+			go = { "revive" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
