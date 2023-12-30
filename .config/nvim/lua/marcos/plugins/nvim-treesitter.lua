@@ -13,6 +13,7 @@ return {
 				"c",
 				"lua",
 				"vim",
+				"regex",
 				"vimdoc",
 				"query",
 				"terraform",
