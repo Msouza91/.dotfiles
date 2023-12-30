@@ -145,10 +145,11 @@ source $ZSH/oh-my-zsh.sh
  alias tf="terraform"
  alias vim="nvim"
 
- # Copilot CLI
+ # GH CLI extensions
 alias copilot='gh copilot'
 alias gcs='gh copilot suggest'
 alias gce='gh copilot explain'
+alias gcd='gh dash'
 
 
 # Changing "ls" to "eza"

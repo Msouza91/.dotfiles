@@ -9,8 +9,11 @@ prSections:
   - title: Needs My Review
     filters: is:open review-requested:@me
   - title: Srna IP Update
-    filters: is:open repo:serena/tunnel-sg-rules
+    filters: is:open repo:omega-energia/tunnel-sg-rules
     limit: 30 # optional limit of rows fetched for this section
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+    limit: 30
 issuesSections:
   - title: Created
     filters: is:open author:@me
@@ -18,6 +21,9 @@ issuesSections:
     filters: is:open assignee:@me
   - title: Subscribed
     filters: is:open -author:@me
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+    limit: 30
 defaults:
   layout:
     prs:
