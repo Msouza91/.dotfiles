@@ -3,6 +3,7 @@ return {
 	version = "0.1.5", -- or, branch = '0.1.x',
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"ANGkeith/telescope-terraform-doc.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
@@ -15,5 +16,15 @@ return {
 			end)
 		end)
 		vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
+		local opts = {
+			defaults = {
+				prompt_prefix = "🔍",
+			},
+			extensions = {
+				"fzf",
+				"telescope-terraform-doc",
+			},
+		}
+		require("telescope").setup(opts)
 	end,
 }

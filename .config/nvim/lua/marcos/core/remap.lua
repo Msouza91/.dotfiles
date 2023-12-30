@@ -68,6 +68,10 @@ vim.keymap.set("n", "<leader>ti", ":!terraform init<CR>")
 vim.keymap.set("n", "<leader>tv", ":!terraform validate<CR>")
 vim.keymap.set("n", "<leader>tp", ":!terraform plan<CR>")
 
+-- Terraform docs
+vim.keymap.set("n", "<leader>td", "<cmd>Telescope terraform_doc<cr>")
+vim.keymap.set("n", "<leader>tdm", "<cmd>Telescope terraform_doc modules<cr>")
+
 -- Obsidian
 vim.keymap.set("n", "<leader>o", function()
 	vim.cmd("ObsidianSearch")
