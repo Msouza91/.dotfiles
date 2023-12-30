@@ -86,22 +86,27 @@ return {
 		local cmp_format = require("lsp-zero").cmp_format()
 		local cmp_action = require("lsp-zero").cmp_action()
 
+		require("luasnip.loaders.from_vscode").lazy_load()
+
 		cmp.setup({
 			formatting = cmp_format,
+			snipet = {
+				expand = function(args)
+					require("luasnip").lsp.expand(args.body)
+				end,
+			},
 			window = {
 				completion = cmp.config.window.bordered(),
 				documentation = cmp.config.window.bordered(),
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-Space>"] = cmp.mapping.complete(),
-				["<C-n>"] = cmp.mapping.select_next_item(),
-				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-e>"] = cmp.mapping.close(),
 				["<C-y>"] = cmp.mapping.confirm({ select = false }),
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
-				["<Tab>"] = cmp_action.luasnip_supertab(),
-				["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
+				["<C-n>"] = cmp_action.luasnip_supertab(),
+				["<C-p>"] = cmp_action.luasnip_shift_supertab(),
 			}),
 			sources = {
 				{ name = "nvim_lsp" },
