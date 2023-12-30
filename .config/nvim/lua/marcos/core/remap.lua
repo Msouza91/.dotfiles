@@ -1,3 +1,7 @@
+------------------MAPPTINGS------------------
+
+local utils = require("marcos.utils")
+
 vim.g.mapleader = " "
 -- Netrw
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -15,6 +19,12 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- Terminal Escape
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Escape from term-mode" })
+
+-- run current file
+vim.keymap.set("n", "<leader>r", utils.save_and_exec, { desc = "Save and execute file" })
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
