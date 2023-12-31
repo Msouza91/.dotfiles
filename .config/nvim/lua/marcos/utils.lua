@@ -72,4 +72,21 @@ function M.save_and_exec()
 	end
 end
 
+function M.autocmd(args)
+	local event = args[1]
+	local group = args[2]
+	local callback = args[3]
+	local pattern = args[5] or "*"
+
+	vim.api.nvim_create_autocmd(event, {
+		group = group,
+		pattern = pattern,
+		buffer = args[4],
+		callback = function()
+			callback()
+		end,
+		once = args.once,
+	})
+end
+
 return M

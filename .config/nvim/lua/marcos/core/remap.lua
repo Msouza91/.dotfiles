@@ -2,6 +2,39 @@
 
 local utils = require("marcos.utils")
 
+-- Why this is not working?
+--[[
+   [local filetype = vim.bo.filetype
+   [local autocmd = utils.autocmd
+   [local autocmd_clear = vim.api.nvim_clear_autocmds
+   [local augroup_ft_bindings = vim.api.nvim_create_augroup("ft_bindings", { clear = true })
+   [
+   [-- Set filetype specific bindings
+   [local filetype_attach = setmetatable({
+   [    octo = function()
+   [        autocmd_clear({ group = "ft_bindings", bufnr = 0 })
+   [        autocmd({
+   [            { "BufEnter" },
+   [            augroup_ft_bindings,
+   [            function()
+   [                vim.keymap.set("i", "@", "@<C-k><C-o>", { silent = true, buffer = true })
+   [                vim.keymap.set("i", "#", "#<C-k><C-o>", { silent = true, buffer = true })
+   [            end,
+   [            0,
+   [            "octo://*",
+   [        })
+   [    end,
+   [}, {
+   [    __index = function()
+   [        return function() end
+   [    end,
+   [})
+   [
+   [filetype_attach[filetype]()
+   ]]
+
+-- Set leader
+
 vim.g.mapleader = " "
 -- Netrw
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
