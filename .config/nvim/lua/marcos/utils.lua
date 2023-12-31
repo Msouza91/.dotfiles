@@ -7,6 +7,7 @@ local M = {}
 ---@field new? boolean
 ---@field focus boolean
 ---@param opts TermConfig
+
 function M.term(opts, ...)
 	local terminal = vim.iter(vim.fn.getwininfo()):find(function(v)
 		return v.terminal == 1
