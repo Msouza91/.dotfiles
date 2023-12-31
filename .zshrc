@@ -149,7 +149,7 @@ source $ZSH/oh-my-zsh.sh
 alias copilot='gh copilot'
 alias gcs='gh copilot suggest'
 alias gce='gh copilot explain'
-alias gcd='gh dash'
+alias ghd='gh dash'
 
 
 # Changing "ls" to "eza"
