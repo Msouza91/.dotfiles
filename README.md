@@ -24,6 +24,8 @@
   - Neovim
   - xwallpaper
   - bat
+  - PIP
+    - yt-dlp
   - gh cli
     - copilot
     - dash
