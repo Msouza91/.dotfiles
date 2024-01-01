@@ -18,6 +18,9 @@ config.load_autoconfig(False)
 config.bind(',m', 'hint links spawn --verbose  umpv {hint-url} --input-ipc-server=/tmp/mpvsocket')
 config.bind(',M', 'hint --rapid links spawn --verbose  umpv {hint-url} --input-ipc-server=/tmp/mpvsocket')
 
+# Smooth scrolling
+config.set('scrolling.smooth', True)
+
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
 # including IndexedDB, DOM storage, filesystem API, service workers, and
