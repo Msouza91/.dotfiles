@@ -10,3 +10,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".local/src/dmenu"]
+	path = .local/src/dmenu
+	url = https://git.suckless.org/dmenu
