@@ -18,6 +18,9 @@ config.load_autoconfig(False)
 config.bind(',m', 'hint links spawn --verbose  umpv {hint-url} --input-ipc-server=/tmp/mpvsocket')
 config.bind(',M', 'hint --rapid links spawn --verbose  umpv {hint-url} --input-ipc-server=/tmp/mpvsocket')
 
+# Theme toggle
+config.bind(',d', 'config-cycle content.user_stylesheets qutebrowser-themes/themes/rose-pine-all-sites.css ""')
+
 # Smooth scrolling
 config.set('scrolling.smooth', True)
 
@@ -140,6 +143,7 @@ config.set('content.local_content_can_access_file_urls', False, 'file:///home/ma
 
 # My theme
 config.source('qutebrowser-themes/themes/rose-pine.py')
+c.content.user_stylesheets = ['qutebrowser-themes/themes/rose-pine-all-sites.css']
 
 # Dark mode
 config.set('colors.webpage.darkmode.enabled', True)
