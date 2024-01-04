@@ -6,6 +6,24 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
+		local Marcos_Octo = vim.api.nvim_create_augroup("Marcos_Octo", {})
+
+		local autocmd = vim.api.nvim_create_autocmd
+		autocmd("BufWinEnter", {
+			group = Marcos_Octo,
+			pattern = "*",
+			callback = function()
+				if vim.bo.ft ~= "octo" then
+					return
+				end
+
+				local bufnr = vim.api.nvim_get_current_buf()
+				local opts = { buffer = bufnr, remap = false, silent = true }
+
+				vim.keymap.set("i", "@", "@<C-x><C-o>", opts)
+				vim.keymap.set("i", "#", "#<C-x><C-o>", opts)
+			end,
+		})
 		require("octo").setup({
 			use_local_fs = false, -- use local files on right side of reviews
 			enable_builtin = false, -- shows a list of builtin actions when no action is provided
