@@ -23,6 +23,8 @@ return {
 			extensions = {
 				"fzf",
 				"telescope-terraform-doc",
+				"git_worktree",
+				"createP_git_worktree",
 			},
 		}
 		require("telescope").setup(opts)

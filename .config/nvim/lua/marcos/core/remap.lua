@@ -74,6 +74,10 @@ vim.keymap.set("n", "<leader>tp", ":!terraform plan<CR>")
 vim.keymap.set("n", "<leader>td", "<cmd>Telescope terraform_doc<cr>")
 vim.keymap.set("n", "<leader>tdm", "<cmd>Telescope terraform_doc modules<cr>")
 
+-- Worktree shortcuts
+vim.keymap.set("n", "<leader>ws", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
+vim.keymap.set("n", "<leader>wc", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
+
 -- Obsidian
 vim.keymap.set("n", "<leader>o", function()
 	vim.cmd("ObsidianSearch")
