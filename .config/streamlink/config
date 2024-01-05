@@ -1,0 +1,4 @@
+# Player options
+player=mpv
+player-args=--cache 2048
+player-no-close

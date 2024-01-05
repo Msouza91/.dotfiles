@@ -1,0 +1,3 @@
+#! /bin/bash
+
+streamlink --twitch-disable-ads --twitch-api-header=Authorization="OAuth $STREAMKEY"

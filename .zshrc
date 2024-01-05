@@ -9,6 +9,7 @@ export PATH="$HOME/.local/bin:$PATH"		# Include home local bin
 export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
 export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
+export STREAMKEY=$(pass Servicos/streamlinkKey)
 
 # Rosé-pine everything
 
@@ -178,6 +179,9 @@ alias ghd='gh dash'
  alias tag='git tag'
  alias newtag='git tag -a'
  alias uncommit='git reset --soft HEAD~1'
+
+# Streamkey
+alias twitch='streamlink --twitch-disable-ads --twitch-api-header=Authorization="OAuth $STREAMKEY"'
 
 # tmux session
 alias tma='tmux attach -t'
