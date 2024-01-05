@@ -1,3 +1,5 @@
 .config/nvim/lazy-lock.json
 .config/nvim/plugin/*
 .local/src/dmenu/config.h
+.config/mpv/scripts/sponsorblock_shared/sponsorblock.txt
+
