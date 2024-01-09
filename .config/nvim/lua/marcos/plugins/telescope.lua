@@ -4,12 +4,14 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"ANGkeith/telescope-terraform-doc.nvim",
+		"xiyaowong/telescope-emoji.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
 		vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+		vim.keymap.set("n", "<leader>e", "<cmd>Telescope emoji<CR>", {})
 		vim.keymap.set("n", "<leader>ps", function()
 			vim.ui.input({ prompt = "Grep > ", cancel_on_esc = true }, function(input)
 				builtin.grep_string({ search = input })
@@ -25,6 +27,7 @@ return {
 				"telescope-terraform-doc",
 				"git_worktree",
 				"createP_git_worktree",
+				"emoji",
 			},
 		}
 		require("telescope").setup(opts)
