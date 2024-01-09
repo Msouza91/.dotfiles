@@ -40,6 +40,7 @@ return {
 				"dockerls",
 				"docker_compose_language_service",
 				"bashls",
+				"taplo",
 			},
 			handlers = {
 				lsp.default_setup,
@@ -59,6 +60,8 @@ return {
 										"Pipelines/*.y*l",
 										"cap/**/*.y*l",
 										"cap/*.y*l",
+										"veiling/**/*.y*l",
+										"veiling/*.y*l",
 									},
 								},
 							},
