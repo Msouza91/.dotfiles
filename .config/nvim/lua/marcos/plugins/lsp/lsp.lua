@@ -22,6 +22,7 @@ return {
 		"rafamadriz/friendly-snippets",
 	},
 	config = function()
+		local my_handlers = require("marcos.core.handlers")
 		-- Globals
 		vim.g.lsp_ui_float_border = "none"
 		local lsp = require("lsp-zero")
@@ -51,25 +52,7 @@ return {
 					require("lspconfig").lua_ls.setup(lua_opts)
 				end,
 				azure_pipelines_ls = function()
-					local azure_pipelines_opts = {
-						settings = {
-							yaml = {
-								schemas = {
-									["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
-										"/azure-pipeline*.y*l",
-										"/*.azure*",
-										"Azure-Pipelines/**/*.y*l",
-										"Pipelines/*.y*l",
-										"cap/**/*.y*l",
-										"cap/*.y*l",
-										"veiling/**/*.y*l",
-										"veiling/*.y*l",
-									},
-								},
-							},
-						},
-					}
-					require("lspconfig").azure_pipelines_ls.setup(azure_pipelines_opts)
+					require("lspconfig").azure_pipelines_ls.setup(my_handlers.azure())
 				end,
 			},
 		})
