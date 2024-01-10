@@ -1,3 +1,4 @@
+vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -17,8 +18,6 @@ vim.opt.undofile = true
 
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
-
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
@@ -28,3 +27,13 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.opt.conceallevel = 1
+
+-- Extra transparency~
+vim.g.transparent_groups = vim.list_extend(vim.g.transparent_groups or {}, {
+	"FloatBorder",
+	"NormalFloat",
+	"DiagnosticUnderlineError",
+	"DiagnosticUnderlineHint",
+	"DiagnosticUnderlineInfo",
+	"DiagnosticUnderlineWarn",
+})

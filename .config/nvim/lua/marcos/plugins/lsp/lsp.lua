@@ -22,6 +22,8 @@ return {
 		"rafamadriz/friendly-snippets",
 	},
 	config = function()
+		-- Globals
+		vim.g.lsp_ui_float_border = "none"
 		local lsp = require("lsp-zero")
 
 		lsp.preset("recommended")
@@ -133,6 +135,7 @@ return {
 
 		lsp.on_attach(function(client, bufnr)
 			local opts = { buffer = bufnr, remap = false }
+
 			if client.server_capabilities["documentSymbolProvider"] then
 				require("nvim-navic").attach(client, bufnr)
 			end
