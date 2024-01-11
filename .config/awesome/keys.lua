@@ -216,6 +216,10 @@ keys.globalkeys = gears.table.join(
 		awful.util.spawn(apps.passmenu_otp)
 	end, { description = "get otp", group = "custom" }),
 
+	awful.key({ modkey }, "F12", function()
+		awful.util.spawn(apps.record)
+	end, { description = "screen record", group = "custom" }),
+
 	-- =========================================
 	-- RELOAD / QUIT AWESOME
 	-- =========================================
