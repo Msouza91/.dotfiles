@@ -11,6 +11,12 @@ export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
 export STREAMKEY=$(pass Servicos/streamlinkKey)
 
+## TMUX SESSION MANAGER
+# ~/.tmux/plugins
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+# ~/.config/tmux/plugins
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+
 # Rosé-pine everything
 
 export FZF_DEFAULT_OPTS="
@@ -191,6 +197,8 @@ alias tms='tmux new -s'
 # tmate security
 alias tmate='tmate -a ~/.ssh/tmate-keys'
 
+# fzf commands
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
