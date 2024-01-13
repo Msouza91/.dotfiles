@@ -4,3 +4,8 @@ image/png=com.github.PintaProject.Pinta.desktop;
 application/pdf=org.pwmt.zathura.desktop;
 application/x-x509-ca-cert=org.gnome.gedit.desktop;
 application/x-desktop=apturl.desktop;
+
+[Default Applications]
+text/html=qutebrowser.desktop
+x-scheme-handler/http=qutebrowser.desktop
+x-scheme-handler/https=qutebrowser.desktop
