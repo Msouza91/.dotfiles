@@ -5,7 +5,7 @@ return {
 	config = function()
 		local opts = {
 			panel = {
-				enabled = true,
+				enabled = false,
 				auto_refresh = false,
 				keymap = {
 					jump_prev = "[[",
@@ -20,7 +20,7 @@ return {
 				},
 			},
 			suggestion = {
-				enabled = true,
+				enabled = false,
 				auto_trigger = false,
 				debounce = 75,
 				keymap = {
