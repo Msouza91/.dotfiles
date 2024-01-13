@@ -1,7 +1,7 @@
 return {
 	"epwalsh/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
-	event = { "BufReadPre *.md", "BufNewFile *.md" },
+	event = "VeryLazy",
 	dependencies = {
 		-- Required.
 		"nvim-lua/plenary.nvim",
