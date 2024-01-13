@@ -16,10 +16,14 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
+		"zbirenbaum/copilot-cmp",
 
 		-- Snippets
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets",
+
+		-- Format Symbols
+		"onsails/lspkind.nvim",
 	},
 	config = function()
 		local my_handlers = require("marcos.core.handlers")
@@ -71,13 +75,53 @@ return {
 
 		--- Setup cmp completion
 		local cmp = require("cmp")
-		local cmp_format = require("lsp-zero").cmp_format()
 		local cmp_action = require("lsp-zero").cmp_action()
-
+		local types = require("cmp.types")
+		local str = require("cmp.utils.str")
+		local lspkind = require("lspkind")
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
-			formatting = cmp_format,
+			require("copilot_cmp").setup(),
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = "symbol", -- show only symbol annotations
+					maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+					-- can also be a function to dynamically calculate max width such as
+					-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+					ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+					show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+					symbol_map = { Copilot = "" },
+
+					-- The function below will be called before any actual modifications from lspkind
+					-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+					before = function(entry, vim_item)
+						-- Get the full snippet (and only keep first line)
+						local word = entry:get_insert_text()
+						if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
+							word = vim.lsp.util.parse_snippet(word)
+						end
+						word = str.oneline(word)
+
+						-- concatenates the string
+						-- local max = 50
+						-- if string.len(word) >= max then
+						-- 	local before = string.sub(word, 1, math.floor((max - 3) / 2))
+						-- 	word = before .. "..."
+						-- end
+
+						if
+							entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
+							and string.sub(vim_item.abbr, -1, -1) == "~"
+						then
+							word = word .. "~"
+						end
+						vim_item.abbr = word
+
+						return vim_item
+					end,
+				}),
+			},
 			snipet = {
 				expand = function(args)
 					require("luasnip").lsp.expand(args.body)
@@ -97,6 +141,7 @@ return {
 				["<C-p>"] = cmp_action.luasnip_shift_supertab(),
 			}),
 			sources = {
+				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip", keyword_length = 2 },
 				{ name = "buffer", keyword_length = 3 },
