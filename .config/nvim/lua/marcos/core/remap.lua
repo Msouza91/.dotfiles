@@ -78,6 +78,9 @@ vim.keymap.set("n", "<leader>tdm", "<cmd>Telescope terraform_doc modules<cr>")
 vim.keymap.set("n", "<leader>ws", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
 vim.keymap.set("n", "<leader>wc", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
 
+-- Telescope ChatGPT
+vim.keymap.set("n", "<leader>c", "<cmd>Telescope gpt<CR>")
+
 -- Obsidian
 vim.keymap.set("n", "<leader>o", function()
 	vim.cmd("ObsidianSearch")
