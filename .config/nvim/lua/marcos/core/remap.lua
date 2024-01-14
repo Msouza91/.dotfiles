@@ -5,6 +5,10 @@ local utils = require("marcos.utils")
 -- Set leader
 
 vim.g.mapleader = " "
+
+-- Terminal
+vim.keymap.set("n", "<leader>tt", utils.toggleTerm)
+
 -- Netrw
 vim.keymap.set("n", "<leader>pv", utils.toggleNetRw)
 
