@@ -5,6 +5,7 @@ return {
 	config = function()
 		local opts = {
 			options = {
+				mode = "tabs",
 				separator_style = "slope",
 				always_show_bufferline = false,
 				show_duplicate_prefix = true,
