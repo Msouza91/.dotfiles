@@ -40,6 +40,8 @@ apps = {
 	passmenu_otp = "passmenu_otp",
 	colorp = "xiccd",
 	record = "dmenurecord",
+	mount = "dmenumount",
+	umount = "dmenuumount",
 }
 
 -- define wireless and ethernet interface names for the network widget

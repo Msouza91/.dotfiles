@@ -216,6 +216,14 @@ keys.globalkeys = gears.table.join(
 		awful.util.spawn(apps.passmenu_otp)
 	end, { description = "get otp", group = "custom" }),
 
+	awful.key({ modkey }, "F10", function()
+		awful.util.spawn(apps.mount)
+	end, { description = "mount drives", group = "custom" }),
+
+	awful.key({ modkey }, "F9", function()
+		awful.util.spawn(apps.umount)
+	end, { description = "unmount drives", group = "custom" }),
+
 	awful.key({ modkey }, "F12", function()
 		awful.util.spawn(apps.record)
 	end, { description = "screen record", group = "custom" }),
