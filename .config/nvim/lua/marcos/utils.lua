@@ -73,4 +73,13 @@ function M.save_and_exec()
 	end
 end
 
+function M.toggleNetRw()
+	local netrw = vim.fn.bufwinnr("Netrw")
+	if netrw == -1 then
+		vim.cmd("Lexplore")
+	else
+		vim.cmd(netrw .. "quit")
+	end
+end
+
 return M

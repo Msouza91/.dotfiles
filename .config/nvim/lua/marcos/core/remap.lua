@@ -6,7 +6,7 @@ local utils = require("marcos.utils")
 
 vim.g.mapleader = " "
 -- Netrw
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", utils.toggleNetRw)
 
 -- Move selected line / block of text in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
