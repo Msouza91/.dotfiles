@@ -17,6 +17,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
+vim.opt.indentexpr = "nvim_treesitter#indent()"
 
 vim.opt.wrap = false
 
@@ -36,6 +37,8 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.opt.conceallevel = 1
+
+vim.opt.cursorline = true
 
 -- Extra transparency~
 vim.g.transparent_groups = vim.list_extend(vim.g.transparent_groups or {}, {
