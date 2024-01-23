@@ -208,6 +208,10 @@ keys.globalkeys = gears.table.join(
 		awful.util.spawn(apps.terminal .. " -e ranger")
 	end, { description = "open ranger", group = "custom" }),
 
+	awful.key({ modkey }, "p", function()
+		awful.util.spawn(apps.timetrack)
+	end, { description = "Start or stop timetracking task", group = "custom" }),
+
 	awful.key({ modkey, "Shift" }, "d", function()
 		awful.util.spawn(apps.passmenu)
 	end, { description = "get password", group = "custom" }),

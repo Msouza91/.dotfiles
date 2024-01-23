@@ -1,0 +1,25 @@
+#! /bin/sh
+#
+# This uses zenity for a simple gui around watson time tracking
+
+# Get the current task
+command=$(zenity --entry --text="What are you doing?" --entry-text="")
+
+# Check if command value is status or stop have a case for each and a third
+
+if [ "$command" = "status" ]; then
+    # Get the current task
+    task=$(watson status)
+    # Display the current task
+    zenity --info --text="$task"
+elif [ "$command" = "stop" ]; then
+    # Stop the current task
+    task=$(watson stop)
+    # Display the current task
+    zenity --info --text="$task"
+else
+    # Start the task
+    task=$(watson start "$command")
+    # Display the current task
+    zenity --info --text="$task"
+fi

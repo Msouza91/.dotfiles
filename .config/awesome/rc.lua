@@ -42,6 +42,7 @@ apps = {
 	record = "dmenurecord",
 	mount = "dmenumount",
 	umount = "dmenuumount",
+	timetrack = "timetrack",
 }
 
 -- define wireless and ethernet interface names for the network widget
