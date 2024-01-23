@@ -30,7 +30,7 @@ apps = {
 	--launcher = "rofi -normal-window -modi drun -show drun -theme " .. theme_config_dir .. "rofi.rasi",
 	launcher = "dmenu_run -nb '#191724' -sf '#191724' -sb '#f6c177' -nf '#f6c177'",
 	lock = "i3lock-pretty",
-	screenshot = "scrot -e 'mv $f ~/Imagens/ 2>/dev/null'",
+	screenshot = "scrot -e 'xclip -selection clipboard -t image/png -i $f' -F '/home/marcos/Imagens/%Y-%m-%d_$wx$h.png'",
 	screenshot_select = "scrot -s -l mode=edge -e 'xclip -selection clipboard -t image/png -i $f' -F '/home/marcos/Imagens/%Y-%m-%d_$wx$h.png'",
 	filebrowser = "nautilus",
 	airpods = "airpods_toggle",
