@@ -17,9 +17,15 @@ elif [ "$command" = "stop" ]; then
     task=$(watson stop)
     # Display the current task
     zenity --info --text="$task"
+elif [ "$command" = "cancel" ]; then
+    # Cancel the current task
+    task=$(watson cancel)
+    # Display the current task
+    zenity --info --text="$task"
 else
+    tags=$(zenity --entry --text="Tags?" --entry-text="")
     # Start the task
-    task=$(watson start "$command")
+    task=$(watson start "$command" $tags)
     # Display the current task
     zenity --info --text="$task"
 fi
