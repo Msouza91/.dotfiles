@@ -12,6 +12,9 @@ vim.keymap.set("n", "<leader>tt", utils.toggleTerm)
 -- Netrw
 vim.keymap.set("n", "<leader>pv", "<CMD>NvimTreeToggle<CR>")
 
+-- Chg to current file directory
+vim.keymap.set("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
+
 -- Move selected line / block of text in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
