@@ -158,7 +158,6 @@ alias gcs='gh copilot suggest'
 alias gce='gh copilot explain'
 alias ghd='gh dash'
 
-
 # Changing "ls" to "eza"
  alias ls='eza -al --color=always --group-directories-first' # my preferred listing
  alias la='eza -a --color=always --group-directories-first'  # all files and dirs
@@ -196,6 +195,9 @@ alias tms='tmux new -s'
 
 # tmate security
 alias tmate='tmate -a ~/.ssh/tmate-keys'
+
+# Restart pipewire, wireplumber and pulseaudio
+alias rstpw='systemctl --user restart wireplumber pipewire pipewire-pulse'
 
 # fzf commands
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
