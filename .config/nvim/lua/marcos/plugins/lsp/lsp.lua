@@ -13,6 +13,7 @@ return {
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
@@ -80,6 +81,24 @@ return {
 		local str = require("cmp.utils.str")
 		local lspkind = require("lspkind")
 		require("luasnip.loaders.from_vscode").lazy_load()
+
+		cmp.setup.cmdline("/", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = "buffer" },
+			},
+		})
+
+		cmp.setup.cmdline(":", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = "path" },
+				{ name = "cmdline" },
+				option = {
+					ignore_cmds = { "Man", "!" },
+				},
+			}),
+		})
 
 		cmp.setup({
 			require("copilot_cmp").setup(),
