@@ -150,6 +150,10 @@ source $ZSH/oh-my-zsh.sh
  alias zshconfig="vim ~/.zshrc"
  alias ohmyzsh="vim ~/.oh-my-zsh"
  alias tf="terraform"
+ alias tfws="terraform workspace select"
+ alias tfwl="terraform workspace list"
+ alias tfsl="terraform state list"
+ alias tfss="terraform state show"
  alias vim="nvim"
 
  # GH CLI extensions
