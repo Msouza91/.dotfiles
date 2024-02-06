@@ -1,0 +1,16 @@
+[opener]
+archive = [{ exec = 'unar "$1"', desc = "Extract here" }]
+text = [{ exec = 'nvim "$@"', block = true }]
+image = [{ exec = 'feh "$@"', block = false }]
+
+[open]
+rules = [
+    { mime = "text/*", use = "text" },
+    { mime = "image/*", use = "image" },
+
+    # { mime = "application/json", use = "text" },
+    { name = "*.json", use = "text" },
+
+    # Multiple openers for a single rule
+    { name = "*.html", use = ["browser", "text"] },
+]
