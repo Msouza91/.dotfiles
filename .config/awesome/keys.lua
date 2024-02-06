@@ -205,8 +205,8 @@ keys.globalkeys = gears.table.join(
 	end, { description = "open blueman", group = "custom" }),
 
 	awful.key({ modkey }, "e", function()
-		awful.util.spawn(apps.terminal .. " -e ranger")
-	end, { description = "open ranger", group = "custom" }),
+		awful.util.spawn(apps.terminal .. " -e yazi")
+	end, { description = "open yazi", group = "custom" }),
 
 	awful.key({ modkey }, "p", function()
 		awful.util.spawn(apps.timetrack)
