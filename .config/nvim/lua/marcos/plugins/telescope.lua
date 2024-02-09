@@ -1,5 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	event = "VeryLazy",
 	version = "0.1.5", -- or, branch = '0.1.x',
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -9,7 +10,6 @@ return {
 		-- GPT Extension depends on chatgpt
 		"HPRIOR/telescope-gpt",
 		"nvim-telescope/telescope.nvim",
-		"jackMort/ChatGPT.nvim",
 		-- End of GPT Extension
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
