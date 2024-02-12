@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Use zenity to ask for one of two options and executing a corresponding script
+# for each option.
+
+ANSWER=$(zenity --list --text "Choose an option" --radiolist --column "" --column "Option" TRUE "1 Screen" FALSE "2 Screens")
+
+if [ $? -eq 0 ]; then
+  case $ANSWER in
+    "1 Screen")
+      ~/.screenlayout/single_scr.sh
+      ;;
+    "2 Screens")
+      ~/.screenlayout/dual_scr.sh
+      ;;
+  esac
+fi
+```
