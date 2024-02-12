@@ -204,6 +204,10 @@ keys.globalkeys = gears.table.join(
 		awful.util.spawn(apps.bt_manager, false)
 	end, { description = "open blueman", group = "custom" }),
 
+	awful.key({ modkey, "Shift" }, "s", function()
+		awful.util.spawn(apps.screen, false)
+	end, { description = "select screen layout", group = "custom" }),
+
 	awful.key({ modkey }, "e", function()
 		awful.util.spawn(apps.terminal .. " -e yazi")
 	end, { description = "open yazi", group = "custom" }),

@@ -43,6 +43,8 @@ apps = {
 	mount = "dmenumount",
 	umount = "dmenuumount",
 	timetrack = "timetrack",
+	screen = "screen",
+	keynav = "keynav",
 }
 
 -- define wireless and ethernet interface names for the network widget
@@ -60,6 +62,7 @@ local run_on_start_up = {
 	"one_drive",
 	"setbg",
 	"colorp",
+	"keynav",
 }
 
 -- ===================================================================
