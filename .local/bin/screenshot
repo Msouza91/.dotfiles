@@ -1,0 +1,12 @@
+#! /bin/sh
+# If called by itself (no arguments), take a screenshot of the entire screen.
+# If passed --sel or -s, take a screenshot of the selected area.
+case $1 in
+    --sel|-s)
+        scrot -s -l mode=edge '/tmp/screenshot.png' -e 'convert /tmp/screenshot.png \\( +clone -background black -shadow 100x40+0+16 \\) +swap -background transparent -layers merge +repage /home/marcos/Imagens/%Y-%m-%d_%H_%M_%S_$wx$h.png && xclip -selection clipboard -t image/png -i /home/marcos/Imagens/%Y-%m-%d_%H_%M_%S_$wx$h.png'
+        ;;
+    *)
+        scrot '/tmp/screenshot.png' -e 'convert /tmp/screenshot.png \\( +clone -background black -shadow 100x40+0+16 \\) +swap -background transparent -layers merge +repage /home/marcos/Imagens/%Y-%m-%d_%H_%M_%S_$wx$h.png && xclip -selection clipboard -t image/png -i /home/marcos/Imagens/%Y-%m-%d_%H_%M_%S_$wx$h.png'
+        ;;
+esac
+rm /tmp/screenshot.png
