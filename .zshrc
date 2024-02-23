@@ -128,6 +128,7 @@ plugins=(
     zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
     zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
     zsh-vi-mode # https://github.com/jeffreytse/zsh-vi-mode
+    ssh-agent
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -214,7 +215,7 @@ export NVM_DIR="$HOME/.nvm"
 # Activate zoxide
 eval "$(zoxide init zsh)"
 # Activate SSH-Agent
-{eval "$(ssh-agent) && ssh-add ~/.ssh/id_ed25519"} &> /dev/null
+#{eval "$(ssh-agent) && ssh-add ~/.ssh/id_ed25519"} &> /dev/null
 
 
 # pnpm
