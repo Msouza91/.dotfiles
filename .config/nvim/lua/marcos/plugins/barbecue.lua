@@ -3,7 +3,7 @@ return {
 	event = { "BufWinEnter", "BufNewFile" },
 	name = "barbecue",
 	version = "*",
-	-- test
+	-- test gitsigns blame
 	dependencies = {
 		"SmiteshP/nvim-navic",
 		"nvim-tree/nvim-web-devicons", -- optional dependency
