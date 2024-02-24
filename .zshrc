@@ -129,6 +129,7 @@ plugins=(
     zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
     zsh-vi-mode # https://github.com/jeffreytse/zsh-vi-mode
     ssh-agent
+    gpg-agent
     )
 
 source $ZSH/oh-my-zsh.sh
