@@ -7,7 +7,7 @@ local utils = require("marcos.utils")
 vim.g.mapleader = " "
 
 -- Terminal
-vim.keymap.set("n", "<leader>tt", utils.toggleTerm)
+vim.keymap.set("n", "<leader>tt", "<CMD> belowright 15sp term://$SHELL<CR>i")
 
 -- Netrw
 vim.keymap.set("n", "<leader>pv", "<CMD>NvimTreeToggle<CR>")
