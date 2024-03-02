@@ -43,7 +43,7 @@ return {
 				"gopls",
 				"yamlls",
 				"lua_ls",
-				"azure_pipelines_ls",
+				"azure_pipelines_ls@0.7.0",
 				"eslint",
 				"dockerls",
 				"docker_compose_language_service",
