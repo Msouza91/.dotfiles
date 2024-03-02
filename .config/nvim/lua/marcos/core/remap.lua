@@ -59,10 +59,7 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- tmux sessionizer
---vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
-vim.keymap.set("n", "<C-f>", "<cmd>SessionManager load_session<CR>")
-vim.keymap.set("n", "<C-s>", "<cmd>SessionManager save_current_session<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Lazy window
 vim.keymap.set("n", "<leader>l", function()

@@ -199,6 +199,7 @@ alias twitch='streamlink --twitch-disable-ads --twitch-api-header=Authorization=
 alias tma='tmux attach -t'
 alias tml='tmux ls'
 alias tms='tmux new -s'
+alias tss='tmux-sessionizer'
 
 # tmate security
 alias tmate='tmate -a ~/.ssh/tmate-keys'
@@ -222,8 +223,8 @@ eval "$(zoxide init zsh)"
 # pnpm
 export PNPM_HOME="/home/marcos/.local/share/pnpm"
 case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
