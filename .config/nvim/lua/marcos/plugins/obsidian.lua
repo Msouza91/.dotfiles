@@ -9,7 +9,7 @@ return {
 	config = function()
 		require("obsidian").setup({
 
-			dir = "~/vaults/Deez-notes", -- Path to your Obsidian vault. Default: "~/vault"
+			dir = "/Users/marcos/Library/Mobile Documents/iCloud~md~obsidian/Documents/Deez-notes", -- Path to your Obsidian vault. Default: "~/vault"
 
 			templates = {
 				subdir = "Templates",

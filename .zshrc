@@ -135,7 +135,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Install asdf
-. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/asdf.sh
 
 # User configuration
 
@@ -209,6 +209,7 @@ alias rstpw='systemctl --user restart wireplumber pipewire pipewire-pulse'
 
 # fzf commands
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
