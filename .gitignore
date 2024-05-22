@@ -1,5 +1,8 @@
 .config/nvim/lazy-lock.json
 .config/nvim/plugin/*
+.config/tmux/plugins/*
+!.config/tmux/plugins/tpm
 .local/src/dmenu/config.h
 .config/mpv/scripts/sponsorblock_shared/sponsorblock.txt
-
+.local/share/*
+.local/state/*
