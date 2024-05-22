@@ -1,0 +1,12 @@
+#! /bin/sh
+
+if [ "$1" = "on" ]; then
+  # run a command
+  skhd --start-service && yabai --start-service && brew services start sketchybar
+elif [ "$1" = "off" ]; then
+  # run another command
+  skhd --stop-service && yabai --stop-service && brew services stop sketchybar
+else
+  # print a help message
+  echo "Usage: $0 {on|off}"
+fi
