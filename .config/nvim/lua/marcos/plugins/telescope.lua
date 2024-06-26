@@ -11,7 +11,7 @@ return {
 		"HPRIOR/telescope-gpt",
 		"nvim-telescope/telescope.nvim",
 		-- End of GPT Extension
-		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		--{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
 		local builtin = require("telescope.builtin")

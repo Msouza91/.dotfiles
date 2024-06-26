@@ -1,17 +1,17 @@
-[ window ]
+[window]
 
-decorations =  "None"
+decorations = "None"
 opacity = 0.75
 
-[ font ]
+[font]
 
-normal.family = "CaskaydiaCoveNerdFont"
-bold.family = "CaskaydiaCoveNerdFont"
-italic.family = "CaskaydiaCoveNerdFont"
+normal.family = "CaskaydiaCove NFM"
+bold.family = "CaskaydiaCove NFM"
+italic.family = "CaskaydiaCove NFM"
 #bolditalic.family = "CaskaydiaCoveNerdFont"
-size = 11
+size = 14
 
-[ colors.primary ]
+[colors.primary]
 
 foreground = "#e0def4"
 background = "#232136"
@@ -22,13 +22,13 @@ bright_foreground = "#e0def4"
 
 #vi_mode_cursor = { text = "#e0def4", cursor = "#56526e" }
 
-[ colors.search ]
+[colors.search]
 
 matches = { foreground = "#908caa", background = "#393552" }
 
 focused_match = { foreground = "#232136", background = "#ea9a97" }
 
-[ colors.hints ]
+[colors.hints]
 
 start = { foreground = "#908caa", background = "#2a273f" }
 
@@ -40,7 +40,7 @@ end = { foreground = "#6e6a86", background = "#2a273f" }
 
 #selection = { text = "#e0def4", background = "#44415a" }
 
-[ colors.normal ]
+[colors.normal]
 black = "#393552"
 red = "#eb6f92"
 green = "#3e8fb0"
@@ -50,7 +50,7 @@ magenta = "#c4a7e7"
 cyan = "#ea9a97"
 white = "#e0def4"
 
-[ colors.bright ]
+[colors.bright]
 black = "#6e6a86"
 red = "#eb6f92"
 green = "#3e8fb0"
@@ -60,7 +60,7 @@ magenta = "#c4a7e7"
 cyan = "#ea9a97"
 white = "#e0def4"
 
-[ colors.dim ]
+[colors.dim]
 black = "#6e6a86"
 red = "#eb6f92"
 green = "#3e8fb0"

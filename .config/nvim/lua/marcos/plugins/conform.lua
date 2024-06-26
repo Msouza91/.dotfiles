@@ -5,7 +5,7 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				yaml = { "prettier" },
+				--yaml = { "prettier" },
 				markdown = { "prettier" },
 				json = { "prettier" },
 				go = { "gofumpt" },

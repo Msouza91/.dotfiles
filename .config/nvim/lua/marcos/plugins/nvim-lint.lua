@@ -9,7 +9,7 @@ return {
 
 		lint.linters_by_ft = {
 			javascript = { "eslint_d" },
-			yaml = { "actionlint" },
+			yaml = { "yamllint" },
 			terraform = { "tfsec", "tflint" },
 			markdown = { "markdownlint" },
 			go = { "revive" },

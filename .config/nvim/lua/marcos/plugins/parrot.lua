@@ -1,6 +1,6 @@
 return {
 	"frankroeder/parrot.nvim",
-	dependencies = { "fzf-lua", "plenary" },
+	--dependencies = { "fzf-lua", "plenary" },
 	config = function()
 		require("parrot").setup({
 			providers = {

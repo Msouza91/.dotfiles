@@ -1,0 +1,11 @@
+#! /bin/sh
+
+output_color=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+
+if [[ "$output_color" == "Dark" ]]; then
+    kitty @ set-colors -a ~/.dotfiles/.config/kitty/themes/rose-pine.conf
+    sed -i '.bak' '80s/dawn/main/' ~/.config/tmux/tmux.conf
+else
+    kitty @ set-colors -a ~/.dotfiles/.config/kitty/themes/rose-pine-dawn.conf
+    sed -i '.bak' '80s/main/dawn/' ~/.config/tmux/tmux.conf
+fi

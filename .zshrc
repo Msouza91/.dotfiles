@@ -3,6 +3,10 @@
 
 ### EXPORTS ###
 
+# 1 Password agent
+
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
 export HISTCONTROL=ignoredups:erasedups		# no duplicate entries
 export ZSH="$HOME/.oh-my-zsh"			# Path to your oh-my-zsh installation.
 export PATH="$HOME/.local/bin:$PATH"		# Include home local bin
@@ -10,6 +14,11 @@ export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
 export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
 export STREAMKEY=$(pass Servicos/streamlinkKey)
+export CRUNCHYROLL=$(pass crunchyroll)
+# Brew libpq stuff
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 ## TMUX SESSION MANAGER
 # ~/.tmux/plugins
@@ -128,7 +137,6 @@ plugins=(
     zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
     zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
     zsh-vi-mode # https://github.com/jeffreytse/zsh-vi-mode
-    ssh-agent
     gpg-agent
     )
 

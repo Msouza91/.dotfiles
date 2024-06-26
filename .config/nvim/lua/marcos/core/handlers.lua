@@ -13,6 +13,8 @@ function M.azure()
 						"cap/*.y*l",
 						"veiling/**/*.y*l",
 						"veiling/*.y*l",
+						"sol_agora/**/*.y*l",
+						"sol_agora/*.y*l",
 					},
 				},
 			},
