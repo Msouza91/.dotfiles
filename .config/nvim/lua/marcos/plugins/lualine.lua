@@ -2,11 +2,6 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local nvimbattery = {
-			function()
-				return require("battery").get_status_line()
-			end,
-		}
 		local at_statusline = {
 			require("noice").api.statusline.mode.get,
 			cond = require("noice").api.statusline.mode.has,
@@ -35,7 +30,7 @@ return {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics", at_statusline },
 				lualine_c = { "filename" },
-				lualine_x = { "encoding", "fileformat", "filetype", nvimbattery },
+				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
