@@ -26,9 +26,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- TreeSJ
-vim.keymap.set("n", "<leader>m", "<CMD>TSJToggle<CR>")
-
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -79,14 +76,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>ti", ":!terraform init<CR>")
 vim.keymap.set("n", "<leader>tv", ":!terraform validate<CR>")
 vim.keymap.set("n", "<leader>tp", ":!terraform plan<CR>")
-
--- Terraform docs
-vim.keymap.set("n", "<leader>td", "<cmd>Telescope terraform_doc<cr>")
-vim.keymap.set("n", "<leader>tdm", "<cmd>Telescope terraform_doc modules<cr>")
-
--- Worktree shortcuts
-vim.keymap.set("n", "<leader>ws", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
-vim.keymap.set("n", "<leader>wc", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
 
 -- Telescope ChatGPT
 vim.keymap.set("n", "<leader>c", "<cmd>Telescope gpt<CR>")

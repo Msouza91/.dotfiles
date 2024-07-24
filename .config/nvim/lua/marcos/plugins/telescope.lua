@@ -5,7 +5,6 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		--Extensions
-		"ANGkeith/telescope-terraform-doc.nvim",
 		"xiyaowong/telescope-emoji.nvim",
 		--{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
@@ -26,9 +25,6 @@ return {
 			},
 			extensions = {
 				"fzf",
-				"telescope-terraform-doc",
-				"git_worktree",
-				"createP_git_worktree",
 				"emoji",
 			},
 		}
