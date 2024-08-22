@@ -1,9 +1,6 @@
 vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.foldlevelstart = 1
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
