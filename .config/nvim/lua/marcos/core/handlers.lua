@@ -15,6 +15,8 @@ function M.azure()
 						"veiling/*.y*l",
 						"sol_agora/**/*.y*l",
 						"sol_agora/*.y*l",
+						"aldo_solar/**/*.y*l",
+						"aldo_solar/*.y*l",
 					},
 				},
 			},
