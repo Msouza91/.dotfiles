@@ -19,7 +19,7 @@ return {
 				},
 				ignore_focus = {},
 				always_divide_middle = true,
-				globalstatus = false,
+				globalstatus = true,
 				refresh = {
 					statusline = 1000,
 					tabline = 1000,
@@ -45,7 +45,7 @@ return {
 			tabline = {},
 			winbar = {},
 			inactive_winbar = {},
-			extensions = {},
+			extensions = { "mason", "nvim-tree", "quickfix" },
 		})
 	end,
 }
