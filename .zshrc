@@ -13,8 +13,6 @@ export PATH="$HOME/.local/bin:$PATH"		# Include home local bin
 export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
 export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
-export STREAMKEY=$(pass Servicos/streamlinkKey)
-export CRUNCHYROLL=$(pass crunchyroll)
 # Brew libpq stuff
 export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
@@ -200,14 +198,14 @@ alias ghd='gh dash'
  alias newtag='git tag -a'
  alias uncommit='git reset --soft HEAD~1'
 
-# Streamkey
-alias twitch='streamlink --twitch-disable-ads --twitch-api-header=Authorization="OAuth $STREAMKEY"'
-
 # tmux session
 alias tma='tmux attach -t'
 alias tml='tmux ls'
 alias tms='tmux new -s'
 alias tss='tmux-sessionizer'
+
+# Tofu encryption aliases
+alias bP='source msouzatechPass'
 
 # tmate security
 alias tmate='tmate -a ~/.ssh/tmate-keys'
@@ -239,3 +237,6 @@ esac
 
 #colorscript
 colorscript random
+
+# bun completions
+[ -s "/Users/marcos/.bun/_bun" ] && source "/Users/marcos/.bun/_bun"
