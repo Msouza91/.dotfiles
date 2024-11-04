@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Get the output from the command
+current_theme=$(yq eval '.foreground' ~/.config/k9s/skins/rose.yaml)
+output=$(dark-notify -e)
+
+# Check the output and execute corresponding code
+if [[ "$output" == "light" && "$current_theme" != "#575279" ]]; then
+    cp ~/.config/k9s/skins/rose_pine_dawn.yaml ~/.config/k9s/skins/rose.yaml
+    k9s
+elif [[ "$output" == "dark" && "$current_theme" != "#e0def4" ]]; then
+    cp ~/.config/k9s/skins/rose_pine.yaml ~/.config/k9s/skins/rose.yaml
+    k9s
+else
+    k9s
+fi
