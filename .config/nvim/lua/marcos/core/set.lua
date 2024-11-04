@@ -2,10 +2,20 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- No need to see the mode since I'm using statusline
+vim.opt.showmode = false
+
+-- Set splits to my liking
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+
+-- Cursive italic comments haha
+vim.api.nvim_set_hl(0, "Comment", { italic = true })
 
 vim.opt.smartindent = true
 vim.opt.indentexpr = "nvim_treesitter#indent()"
