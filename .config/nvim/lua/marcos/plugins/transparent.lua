@@ -42,5 +42,7 @@ return {
 		require("transparent").setup(opts)
 		require("transparent").clear_prefix("telescope")
 		require("transparent").clear_prefix("notify")
+		require("transparent").clear_prefix("NvimTree")
+		require("transparent").clear_prefix("Fugitive")
 	end,
 }

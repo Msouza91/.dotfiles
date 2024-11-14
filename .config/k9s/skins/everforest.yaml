@@ -1,0 +1,115 @@
+# -----------------------------------------------------------------------------
+# Everforest K9s Skin
+# -----------------------------------------------------------------------------
+
+# Styles...
+foreground: &foreground "#d3c6aa"
+background: &background default
+current_line: &current_line "#3a464c"
+selection: &selection "#3a464c"
+comment: &comment "#859289"
+cyan: &cyan "#83c092"
+green: &green "#a7c080"
+orange: &orange "#e69875"
+pink: &pink "#d699b6"
+purple: &purple "#d699b6"
+red: &red "#e67e80"
+yellow: &yellow "#dbbc7f"
+
+# Skin...
+k9s:
+  # General K9s styles
+  body:
+    fgColor: *foreground
+    bgColor: *background
+    logoColor: *purple
+  # Command prompt styles
+  prompt:
+    fgColor: *foreground
+    bgColor: *background
+    suggestColor: *purple
+  # ClusterInfoView styles.
+  info:
+    fgColor: *pink
+    sectionColor: *foreground
+  # Dialog styles.
+  dialog:
+    fgColor: *foreground
+    bgColor: *background
+    buttonFgColor: *foreground
+    buttonBgColor: *purple
+    buttonFocusFgColor: *yellow
+    buttonFocusBgColor: *pink
+    labelFgColor: *orange
+    fieldFgColor: *foreground
+  frame:
+    # Borders styles.
+    border:
+      fgColor: *selection
+      focusColor: *current_line
+    menu:
+      fgColor: *foreground
+      keyColor: *pink
+      # Used for favorite namespaces
+      numKeyColor: *pink
+    # CrumbView attributes for history navigation.
+    crumbs:
+      fgColor: *foreground
+      bgColor: *current_line
+      activeColor: *current_line
+    # Resource status and update styles
+    status:
+      newColor: *cyan
+      modifyColor: *purple
+      addColor: *green
+      errorColor: *red
+      highlightColor: *orange
+      killColor: *comment
+      completedColor: *comment
+    # Border title styles.
+    title:
+      fgColor: *foreground
+      bgColor: *current_line
+      highlightColor: *orange
+      counterColor: *purple
+      filterColor: *pink
+  views:
+    # Charts skins...
+    charts:
+      bgColor: default
+      defaultDialColors:
+        - *purple
+        - *red
+      defaultChartColors:
+        - *purple
+        - *red
+    # TableView attributes.
+    table:
+      fgColor: *foreground
+      bgColor: *background
+      # Header row styles.
+      header:
+        fgColor: *foreground
+        bgColor: *background
+        sorterColor: *cyan
+    # Xray view attributes.
+    xray:
+      fgColor: *foreground
+      bgColor: *background
+      cursorColor: *current_line
+      graphicColor: *purple
+      showIcons: false
+    # YAML info styles.
+    yaml:
+      keyColor: *pink
+      colonColor: *purple
+      valueColor: *foreground
+    # Logs styles.
+    logs:
+      fgColor: *foreground
+      bgColor: *background
+      indicator:
+        fgColor: *foreground
+        bgColor: *purple
+        toggleOnColor: *pink
+        toggleOffColor: *purple

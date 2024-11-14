@@ -3,17 +3,19 @@
 
 ### EXPORTS ###
 
-# 1 Password agent
+# 1 Password agent (macOS)
+# I save my ssh keys here, remove this to use ssh-agent
 
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
-export HISTCONTROL=ignoredups:erasedups		# no duplicate entries
-export ZSH="$HOME/.oh-my-zsh"			# Path to your oh-my-zsh installation.
-export PATH="$HOME/.local/bin:$PATH"		# Include home local bin
+# Basic exports
+export HISTCONTROL=ignoredups:erasedups		# no duplicate entries on history
+export ZSH="$HOME/.oh-my-zsh"			# Path to your oh-my-zsh installation, have to install it first.
 export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
 export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
-# Brew libpq stuff
+
+# Brew libpq stuff (macOS)
 export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
@@ -23,15 +25,6 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # ~/.config/tmux/plugins
 export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
-
-# Rosé-pine everything
-
-#export FZF_DEFAULT_OPTS="
-	#--color=fg:#908caa,bg:#191724,hl:#ebbcba
-	#--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
-	#--color=border:#403d52,header:#31748f,gutter:#191724
-	#--color=spinner:#f6c177,info:#9ccfd8,separator:#403d52
-	#--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -63,23 +56,8 @@ if [ -z "$XDG_CACHE_HOME" ] ; then
     export XDG_CACHE_HOME="$HOME/.cache"
 fi
 
-### Keybindings
-
-# Ctrl + f tmux-sessionizer
-bindkey -s '^f' '^utmux-sessionizer\n'
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+## eksctl completions
+fpath=($fpath ~/.zsh/completion) # run `eksctl completion zsh > ~/.zsh/completion/_eksctl` to generate completions
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -140,9 +118,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Install asdf
-#. $HOME/.asdf/asdf.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -154,7 +129,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
 
  alias zshconfig="vim ~/.zshrc"
  alias ohmyzsh="vim ~/.oh-my-zsh"
@@ -165,11 +139,8 @@ source $ZSH/oh-my-zsh.sh
  alias tfss="terraform state show"
  alias vim="nvim"
 
- # GH CLI extensions
-alias copilot='gh copilot'
-alias gcs='gh copilot suggest'
-alias gce='gh copilot explain'
-alias ghd='gh dash'
+# Change cat into bat
+alias cat='bat'
 
 # Changing "ls" to "eza"
  alias la='eza -al --color=always --group-directories-first' # my preferred listing
@@ -202,7 +173,6 @@ alias ghd='gh dash'
 alias tma='tmux attach -t'
 alias tml='tmux ls'
 alias tms='tmux new -s'
-alias tss='tmux-sessionizer'
 
 # Tofu encryption aliases
 alias bP='source msouzatechPass'
@@ -223,9 +193,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Activate zoxide
 eval "$(zoxide init zsh)"
-# Activate SSH-Agent
-#{eval "$(ssh-agent) && ssh-add ~/.ssh/id_ed25519"} &> /dev/null
-
 
 # pnpm
 export PNPM_HOME="/home/marcos/.local/share/pnpm"
@@ -235,7 +202,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-#colorscript
+#colorscript random rice shit https://gitlab.com/dwt1/shell-color-scripts
 colorscript random
 
 # bun completions

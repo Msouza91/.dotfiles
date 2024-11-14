@@ -6,9 +6,9 @@ local config = wezterm.config_builder()
 
 function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "rose-pine"
+		return "Everforest Dark Hard (Gogh)"
 	else
-		return "rose-pine-dawn"
+		return "Everforest Light (Gogh)"
 	end
 end
 
@@ -17,9 +17,6 @@ config.font_size = 21
 --config.font = wezterm.font({ family = "Maple Mono NF" })
 config.font = wezterm.font({ family = "IosevkaTerm Nerd Font" })
 --config.font = wezterm.font({ family = "CaskaydiaCove Nerd Font" })
---config.font = wezterm.font({ family = "BerkeleyMonoTrial Nerd Font" })
---config.font = wezterm.font({ family = "CartographCF Nerd Font Mono" })
---config.font = wezterm.font({ family = "VictorMono Nerd Font" })
 
 config.font_rules = {
 	{
@@ -29,7 +26,7 @@ config.font_rules = {
 			--family = "Maple Mono NF",
 			family = "Maple Mono NF",
 			weight = "Bold",
-			--style = "Italic",
+			style = "Italic",
 		}),
 	},
 	{
@@ -56,7 +53,7 @@ config.font_rules = {
 config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.95
 config.macos_window_background_blur = 10
 
 config.send_composed_key_when_left_alt_is_pressed = true

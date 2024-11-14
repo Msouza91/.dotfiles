@@ -10,12 +10,12 @@ return {
 		local opts = {
 			schemes = {
 				-- you can use a different colorscheme for each
-				dark = "rose-pine",
+				dark = "everforest",
 				-- even a different `set background=light/dark` setting or lightline theme
 				-- if you use lightline, you may want to configure lightline themes,
 				-- even if they're the same one, especially if the theme reacts to :set bg
 				light = {
-					colorscheme = "rose-pine-dawn",
+					colorscheme = "everforest",
 				},
 			},
 		}

@@ -1,19 +1,11 @@
 return {
-	"rose-pine/neovim",
-	name = "rose-pine",
+	"neanias/everforest",
+	name = "everforest",
 	lazy = false,
-	--config = function()
-	--vim.cmd("colorscheme rose-pine")
-	----vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	----vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-	--local opts = {
-	--extend_background_behind_borders = true,
-	--styles = {
-	--bold = true,
-	--italic = true,
-	--transparency = true,
-	--},
-	--}
-	--require("rose-pine").setup(opts)
-	--end,
+	config = function()
+		vim.cmd("colorscheme everforest")
+		--vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		vim.g.everforest_background = "hard"
+	end,
 }

@@ -7,7 +7,6 @@ return {
 				lua = { "stylua" },
 				--yaml = { "prettier" },
 				markdown = { "prettier" },
-				terraform = { "hclfmt" },
 				json = { "prettier" },
 				go = { "gofumpt" },
 				-- Use the "_" filetype to run formatters on filetypes that don't

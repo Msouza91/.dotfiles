@@ -1,4 +1,5 @@
 #!/bin/bash
+# This is a script to get the password from 1password cli and set it as an environment variable
 
 export tf_Password=$(op item get --fields label=password y3kmjzhxqi7nrz6onpgbi75eoq --reveal)
 export TF_ENCRYPTION=$(echo "key_provider \"pbkdf2\" \"password\" { passphrase = \""$tf_Password"\" }")
