@@ -1,5 +1,8 @@
 # Repositório de configurações pessoais, pode se inspirar se fizer sentido pra vc
 
+Configurações injetadas viam symlink con GNU Stow
+Clone o repositório e rode `stow .` para criar os links
+
 ## TODO
 
 - Criar script que faz download das configurações e playbook para setup em um comando
