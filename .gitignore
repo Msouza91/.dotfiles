@@ -1,5 +1,6 @@
 .config/nvim/lazy-lock.json
 .config/nvim/plugin/*
+.config/yazi/flavors/*
 .config/tmux/plugins/*
 !.config/tmux/plugins/tpm
 .local/src/dmenu/config.h

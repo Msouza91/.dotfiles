@@ -1,18 +1,18 @@
 [opener]
-archive = [{ exec = 'unar "$1"', desc = "Extract here" }]
-text = [{ exec = 'nvim "$@"', block = true }]
-image = [{ exec = 'feh "$@"', block = false }]
-video = [{ exec = 'umpv "$@"', block = false }]
+archive = [{ run = 'unar "$1"', desc = "Extract here" }]
+text = [{ run = 'nvim "$@"', block = true }]
+image = [{ run = 'open "$@"', block = false }]
+video = [{ run = 'inna "$@"', block = false }]
 
 [open]
 rules = [
-    { mime = "text/*", use = "text" },
-    { mime = "image/*", use = "image" },
-    { mime = "video/*", use = "video" },
+  { mime = "text/*", use = "text" },
+  { mime = "image/*", use = "image" },
+  { mime = "video/*", use = "video" },
 
-    # { mime = "application/json", use = "text" },
-    { name = "*.json", use = "text" },
+  # { mime = "application/json", use = "text" },
+  { name = "*.json", use = "text" },
 
-    # Multiple openers for a single rule
-    { name = "*.html", use = ["browser", "text"] },
+  # Multiple openers for a single rule
+  { name = "*.html", use = ["browser", "text"] },
 ]
