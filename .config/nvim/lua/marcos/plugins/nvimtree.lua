@@ -21,8 +21,8 @@ return {
 				args = {},
 			},
 			view = {
-				width = 25,
-				side = "left",
+				width = 30,
+				side = "right",
 			},
 		}
 		require("nvim-tree").setup(opts)
