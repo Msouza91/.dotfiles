@@ -2,7 +2,8 @@ return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		require("conform").setup({
+		local conform = require("conform")
+		local opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				--yaml = { "prettier" },
@@ -19,6 +20,7 @@ return {
 				timeout_ms = 5000,
 				lsp_fallback = true,
 			},
-		})
+		}
+		conform.setup(opts)
 	end,
 }
