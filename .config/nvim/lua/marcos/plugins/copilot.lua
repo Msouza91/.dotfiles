@@ -1,8 +1,12 @@
 return {
 	"zbirenbaum/copilot.lua",
+	dependencies = {
+		"zbirenbaum/copilot-cmp",
+	},
 	event = { "InsertEnter" },
 	config = function()
 		local copilot = require("copilot")
+		local cop_cmp = require("copilot_cmp")
 		local opts = {
 			panel = {
 				enabled = true,
@@ -38,6 +42,7 @@ return {
 				markdown = false,
 				help = false,
 				gitcommit = false,
+				txt = false,
 				gitrebase = false,
 				hgcommit = false,
 				svn = false,
@@ -48,5 +53,6 @@ return {
 			server_opts_overrides = {},
 		}
 		copilot.setup(opts)
+		cop_cmp.setup()
 	end,
 }
