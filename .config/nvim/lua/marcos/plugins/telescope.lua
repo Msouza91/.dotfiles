@@ -13,11 +13,6 @@ return {
 		vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
 		vim.keymap.set("n", "<C-p>", builtin.git_files, {})
 		vim.keymap.set("n", "<leader>e", "<cmd>Telescope emoji<CR>", {})
-		vim.keymap.set("n", "<leader>ps", function()
-			vim.ui.input({ prompt = "Grep > ", cancel_on_esc = true }, function(input)
-				builtin.grep_string({ search = input })
-			end)
-		end)
 		vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 		local opts = {
 			defaults = {
@@ -29,5 +24,6 @@ return {
 			},
 		}
 		require("telescope").setup(opts)
+		require("marcos.telescope.multigrep").setup()
 	end,
 }
