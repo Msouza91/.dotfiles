@@ -27,6 +27,8 @@ return {
 	},
 	config = function()
 		local my_handlers = require("marcos.core.handlers")
+		local cmp_setup = require("marcos.lsp.cmp")
+
 		-- Globals
 		vim.g.lsp_ui_float_border = "none"
 		local lsp = require("lsp-zero")
@@ -75,104 +77,7 @@ return {
 			},
 		})
 
-		--- Setup cmp completion
-		local cmp = require("cmp")
-		local cmp_action = require("lsp-zero").cmp_action()
-		local types = require("cmp.types")
-		local str = require("cmp.utils.str")
-		local lspkind = require("lspkind")
-		local has_words_before = function()
-			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-				return false
-			end
-			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-			return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-		end
-		require("luasnip.loaders.from_vscode").lazy_load()
-
-		cmp.setup.cmdline("/", {
-			mapping = {
-				["<Tab>"] = vim.schedule_wrap(function(fallback)
-					if cmp.visible() and has_words_before() then
-						cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-					else
-						fallback()
-					end
-				end),
-			},
-			sources = {
-				{ name = "buffer" },
-			},
-		})
-
-		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = "path" },
-				{ name = "cmdline" },
-				option = {
-					ignore_cmds = { "Man", "!" },
-				},
-			}),
-		})
-
-		cmp.setup({
-			formatting = {
-				format = lspkind.cmp_format({
-					mode = "symbol", -- show only symbol annotations
-					maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-					-- can also be a function to dynamically calculate max width such as
-					-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
-					ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-					show_labelDetails = true, -- show labelDetails in menu. Disabled by default
-					symbol_map = { Copilot = "" },
-				}),
-			},
-			snipet = {
-				expand = function(args)
-					require("luasnip").lsp.expand(args.body)
-				end,
-			},
-			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
-			},
-			mapping = cmp.mapping.preset.insert({
-				["<C-Space>"] = cmp.mapping.complete(),
-				["<C-e>"] = cmp.mapping.close(),
-				["<C-y>"] = cmp.mapping.confirm({ select = false }),
-				["<C-u>"] = cmp.mapping.scroll_docs(-4),
-				["<C-d>"] = cmp.mapping.scroll_docs(4),
-				["<C-n>"] = cmp_action.luasnip_supertab(),
-				["<C-p>"] = cmp_action.luasnip_shift_supertab(),
-			}),
-			sources = {
-				{ name = "copilot", group_index = 2 },
-				{ name = "nvim_lsp" },
-				{ name = "luasnip", keyword_length = 2 },
-				{ name = "buffer", keyword_length = 3 },
-				{ name = "path" },
-				{ name = "nvim_lua" },
-			},
-			sorting = {
-				priority_weight = 2,
-				comparators = {
-					require("copilot_cmp.comparators").prioritize,
-
-					-- Below is the default comparitor list and order for nvim-cmp
-					cmp.config.compare.offset,
-					-- cmp.config.compare.scopes, --this is commented in nvim-cmp too
-					cmp.config.compare.exact,
-					cmp.config.compare.score,
-					cmp.config.compare.recently_used,
-					cmp.config.compare.locality,
-					cmp.config.compare.kind,
-					cmp.config.compare.sort_text,
-					cmp.config.compare.length,
-					cmp.config.compare.order,
-				},
-			},
-		})
+		cmp_setup.setup_cmp()
 
 		--- Setup Mapping and some prferences
 		lsp.set_preferences({
@@ -186,49 +91,50 @@ return {
 		})
 
 		lsp.on_attach(function(client, bufnr)
+			local set = vim.keymap.set
 			local opts = { buffer = bufnr, remap = false }
 
 			if client.server_capabilities["documentSymbolProvider"] then
 				require("nvim-navic").attach(client, bufnr)
 			end
 
-			vim.keymap.set("n", "gd", function()
+			set("n", "gd", function()
 				vim.lsp.buf.definition()
 			end, opts)
-			vim.keymap.set("n", "gD", function()
+			set("n", "gD", function()
 				vim.lsp.buf.declaration()
 			end, opts)
-			vim.keymap.set("n", "gi", function()
+			set("n", "gi", function()
 				vim.lsp.buf.implementation()
 			end, opts)
-			vim.keymap.set("n", "<leader>D", function()
+			set("n", "<leader>D", function()
 				vim.lsp.buf.type_definition()
 			end, opts)
-			vim.keymap.set("n", "K", function()
+			set("n", "K", function()
 				vim.lsp.buf.hover()
 			end, opts)
-			vim.keymap.set("n", "<leader>vws", function()
+			set("n", "<leader>vws", function()
 				vim.lsp.buf.workspace_symbol()
 			end, opts)
-			vim.keymap.set("n", "<leader>vd", function()
+			set("n", "<leader>vd", function()
 				vim.diagnostic.open_float()
 			end, opts)
-			vim.keymap.set("n", "[d", function()
+			set("n", "[d", function()
 				vim.diagnostic.goto_next()
 			end, opts)
-			vim.keymap.set("n", "]d", function()
+			set("n", "]d", function()
 				vim.diagnostic.goto_prev()
 			end, opts)
-			vim.keymap.set("n", "<leader>vca", function()
+			set("n", "<leader>vca", function()
 				vim.lsp.buf.code_action()
 			end, opts)
-			vim.keymap.set("n", "<leader>vrr", function()
+			set("n", "<leader>vrr", function()
 				vim.lsp.buf.references()
 			end, opts)
-			vim.keymap.set("n", "<leader>vrn", function()
+			set("n", "<leader>vrn", function()
 				vim.lsp.buf.rename()
 			end, opts)
-			vim.keymap.set("i", "<C-h>", function()
+			set("i", "<C-h>", function()
 				vim.lsp.buf.signature_help()
 			end, opts)
 		end)
