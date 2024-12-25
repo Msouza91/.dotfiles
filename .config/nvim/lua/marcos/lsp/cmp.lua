@@ -14,15 +14,7 @@ function M.setup_cmp()
 	require("luasnip.loaders.from_vscode").lazy_load()
 
 	cmp.setup.cmdline("/", {
-		mapping = {
-			["<Tab>"] = vim.schedule_wrap(function(fallback)
-				if cmp.visible() and has_words_before() then
-					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-				else
-					fallback()
-				end
-			end),
-		},
+		mapping = cmp.mapping.preset.cmdline(),
 		sources = {
 			{ name = "buffer" },
 		},
@@ -58,17 +50,24 @@ function M.setup_cmp()
 			completion = cmp.config.window.bordered(),
 			documentation = cmp.config.window.bordered(),
 		},
-		mapping = cmp.mapping.preset.insert({
-			["<C-Space>"] = cmp.mapping.complete(),
+		mapping = {
+			["<Tab>"] = vim.schedule_wrap(function(fallback)
+				if cmp.visible() and has_words_before() then
+					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+				else
+					fallback()
+				end
+			end),
+			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 			["<C-e>"] = cmp.mapping.close(),
 			["<C-y>"] = cmp.mapping.confirm({ select = false }),
 			["<C-u>"] = cmp.mapping.scroll_docs(-4),
 			["<C-d>"] = cmp.mapping.scroll_docs(4),
 			["<C-n>"] = cmp_action.luasnip_supertab(),
 			["<C-p>"] = cmp_action.luasnip_shift_supertab(),
-		}),
+		},
 		sources = {
-			{ name = "copilot", group_index = 2 },
+			{ name = "copilot" },
 			{ name = "nvim_lsp" },
 			{ name = "luasnip", keyword_length = 2 },
 			{ name = "buffer", keyword_length = 3 },
