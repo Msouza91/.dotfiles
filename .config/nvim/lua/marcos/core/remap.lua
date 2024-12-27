@@ -29,6 +29,10 @@ keymap("x", "<leader>p", [["_dP]])
 local opts = {}
 keymap("t", "jk", [[<C-\><C-n>]], opts)
 
+-- Indent while remaining in visual mode.
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
 -- run current file
 keymap("n", "<leader>r", utils.save_and_exec, { desc = "Save and execute file" })
 
