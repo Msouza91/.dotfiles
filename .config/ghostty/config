@@ -1,0 +1,25 @@
+font-family = IosevkaTerm NF
+font-family-italic = Maple Mono NF
+font-style = Regular
+font-size = 20
+
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+
+shell-integration = zsh
+
+cursor-style = block
+cursor-style-blink = false
+
+window-width = 120
+window-height = 45
+
+confirm-close-surface = false
+clipboard-paste-protection = false
+
+background-opacity = 0.90
+background-blur-radius = 20
+
+macos-titlebar-style = hidden
+
+theme = dark:"Everforest Dark - Hard",light:"Everforest Light - Hard"
