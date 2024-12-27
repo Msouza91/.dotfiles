@@ -8,9 +8,6 @@ local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 
--- Netrw
-keymap("n", "<leader>pv", "<CMD>NvimTreeToggle<CR>")
-
 -- Chg to current file directory
 keymap("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
 
