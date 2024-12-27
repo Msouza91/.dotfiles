@@ -8,6 +8,9 @@ local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 
+-- Exit normal mode with jk
+keymap("i", "jj", "<ESC>")
+
 -- Chg to current file directory
 keymap("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
 
@@ -27,11 +30,11 @@ keymap("x", "<leader>p", [["_dP]])
 
 -- Terminal Escape
 local opts = {}
-keymap("t", "jk", [[<C-\><C-n>]], opts)
+keymap("t", "jj", [[<C-\><C-n>]], opts)
 
 -- Indent while remaining in visual mode.
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
+keymap("v", "<", "<gv")
+keymap("v", ">", ">gv")
 
 -- run current file
 keymap("n", "<leader>r", utils.save_and_exec, { desc = "Save and execute file" })
