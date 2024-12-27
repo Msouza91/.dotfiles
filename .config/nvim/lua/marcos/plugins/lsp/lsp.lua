@@ -32,6 +32,7 @@ return {
 		-- Globals
 		vim.g.lsp_ui_float_border = "none"
 		local lsp = require("lsp-zero")
+		local capabilities = lsp.get_capabilities()
 
 		lsp.preset("recommended")
 
@@ -83,10 +84,10 @@ return {
 		lsp.set_preferences({
 			suggest_lsp_servers = false,
 			sign_icons = {
-				error = "E",
-				warn = "W",
-				hint = "H",
-				info = "I",
+				ERROR = "",
+				WARN = "",
+				HINT = "",
+				INFO = "",
 			},
 		})
 

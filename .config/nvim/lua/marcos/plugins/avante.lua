@@ -7,8 +7,19 @@ return {
 		local av = require("avante")
 		local opts = {
 			---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-			provider = "openai", -- Recommend using Claude
+			provider = "copilot", -- Recommend using Claude
 			auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+			copilot = {
+				endpoint = "https://api.githubcopilot.com",
+				model = "claude-3.5-sonnet",
+				-- claude can use with avante
+				-- model = "claude-3.5-sonnet",
+				proxy = nil, -- [protocol://]host[:port] Use this proxy
+				allow_insecure = false, -- Allow insecure server connections
+				timeout = 30000, -- Timeout in milliseconds
+				temperature = 0,
+				max_tokens = 8192,
+			},
 			openai = {
 				api_key_name = "cmd:pass openai_key",
 				endpoint = "https://api.openai.com/v1",
@@ -27,9 +38,9 @@ return {
 			--- When dual_boost is enabled, avante will generate two responses from the first_provider and second_provider respectively. Then use the response from the first_provider as provider1_output and the response from the second_provider as provider2_output. Finally, avante will generate a response based on the prompt and the two reference outputs, with the default Provider as normal.
 			---Note: This is an experimental feature and may not work as expected.
 			dual_boost = {
-				enabled = true,
-				first_provider = "copilot",
-				second_provider = "openai",
+				enabled = false,
+				first_provider = "openai",
+				second_provider = "copilot",
 				prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
 				timeout = 60000, -- Timeout in milliseconds
 			},
