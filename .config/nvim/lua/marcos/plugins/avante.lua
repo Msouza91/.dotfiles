@@ -1,7 +1,7 @@
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
-	lazy = false,
+	lazy = true,
 	version = false, -- set this if you want to always pull the latest change
 	config = function()
 		local av = require("avante")
@@ -162,6 +162,7 @@ return {
 		{
 			-- Make sure to set this up properly if you have lazy=true
 			"MeanderingProgrammer/render-markdown.nvim",
+			event = "BufRead",
 			opts = {
 				file_types = { "markdown", "Avante" },
 			},
