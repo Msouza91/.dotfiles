@@ -25,6 +25,16 @@ keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
+-- Tab management.
+keymap("n", "<leader>tc", "<cmd>tabclose<cr>", { desc = "Close tab page" })
+keymap("n", "<leader>tn", "<cmd>tab split<cr>", { desc = "New tab page" })
+keymap("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close other tab pages" })
+
+-- Execute macro over a visual region.
+vim.keymap.set("x", "@", function()
+	return ":norm @" .. vim.fn.getcharstr() .. "<cr>"
+end, { expr = true })
+
 -- greatest remap ever
 keymap("x", "<leader>p", [["_dP]])
 
