@@ -31,5 +31,13 @@ return {
 				vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts)
 			end,
 		})
+		-- Add diff mappings for merge conflict resolution
+		vim.keymap.set("n", "<leader>cl", ":diffget //2<CR>", { desc = "Get diff from LEFT (target branch)" })
+		vim.keymap.set("n", "<leader>cr", ":diffget //3<CR>", { desc = "Get diff from RIGHT (merge branch)" })
+		vim.keymap.set("n", "<leader>cb", ":diffget //1<CR>", { desc = "Get diff from BASE" })
+
+		-- Additional helpful diff commands
+		vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit!<CR>", { desc = "Open diff view" })
+		vim.keymap.set("n", "<leader>gD", ":Git diff<CR>", { desc = "Show changes" })
 	end,
 }
