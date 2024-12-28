@@ -18,6 +18,11 @@ keymap("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
+keymap("n", "<leader>md", function()
+	local current_file = vim.fn.expand("%:p")
+	vim.fn.system('tmux split-window -h "glow ' .. current_file .. ' && read"')
+end, { silent = true })
+
 -- Better navigation
 keymap("n", "J", "mzJ`z")
 keymap("n", "<C-d>", "<C-d>zz")
@@ -85,8 +90,3 @@ keymap("n", "<C-j>", "<cmd>cnext<CR>zz")
 keymap("n", "<C-k>", "<cmd>cprev<CR>zz")
 keymap("n", "<leader>j", "<cmd>lnext<CR>zz")
 keymap("n", "<leader>k", "<cmd>lprev<CR>zz")
-
--- MD Preview
-keymap("n", "<leader>md", function()
-	vim.cmd("MarkdownPreviewToggle")
-end)
