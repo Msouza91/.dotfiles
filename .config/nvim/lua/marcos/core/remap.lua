@@ -24,11 +24,20 @@ keymap("n", "<leader>md", function()
 end, { silent = true })
 
 -- Better navigation
+
 keymap("n", "J", "mzJ`z")
-keymap("n", "<C-d>", "<C-d>zz")
-keymap("n", "<C-u>", "<C-u>zz")
-keymap("n", "n", "nzzzv")
-keymap("n", "N", "Nzzzv")
+keymap(
+	"n",
+	"<C-d>",
+	"<cmd>lua vim.cmd('normal! <C-d>'); require('mini.animate').execute_after('scroll', 'normal! zz')<cr>"
+)
+keymap(
+	"n",
+	"<C-u>",
+	"<cmd>lua vim.cmd('normal! <C-u>'); require('mini.animate').execute_after('scroll', 'normal! zz')<cr>"
+)
+keymap("n", "n", "<cmd>lua vim.cmd('normal! n'); require('mini.animate').execute_after('scroll', 'normal! zvzz')<cr>")
+keymap("n", "N", "<cmd>lua vim.cmd('normal! N'); require('mini.animate').execute_after('scroll', 'normal! zvzz')<cr>")
 
 -- Tab management.
 keymap("n", "<leader>tc", "<cmd>tabclose<cr>", { desc = "Close tab page" })
