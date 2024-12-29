@@ -9,6 +9,9 @@ opt.relativenumber = true
 -- No need to see the mode since I'm using statusline
 opt.showmode = false
 
+-- global status
+opt.laststatus = 3
+
 -- Set splits to my liking
 opt.splitbelow = true
 opt.splitright = true
