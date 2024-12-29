@@ -50,6 +50,6 @@ return {
 			-- Which character to use for drawing scope indicator
 			symbol = "╎",
 		}
-		require("mini.indentscope").setup()
+		require("mini.indentscope").setup(opts)
 	end,
 }
