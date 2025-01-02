@@ -11,6 +11,13 @@ return {
 					["<C-k>"] = false,
 					["<C-j>"] = false,
 					["<M-h>"] = "actions.select_split",
+					["yp"] = {
+						desc = "Copy filepath to system clipboard",
+						callback = function()
+							require("oil.actions").copy_entry_path.callback()
+							vim.fn.setreg("+", vim.fn.getreg(vim.v.register))
+						end,
+					},
 				},
 				view_options = { show_hidden = true },
 			})
