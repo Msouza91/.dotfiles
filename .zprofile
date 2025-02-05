@@ -34,6 +34,7 @@ export ZSH="$HOME/.oh-my-zsh"			# Path to your oh-my-zsh installation, have to i
 export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
 export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
+export DEEPSEEK_API_KEY="$(pass deepseek_key)"
 ## TMUX SESSION MANAGER
 
 # ~/.tmux/plugins

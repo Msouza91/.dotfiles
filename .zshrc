@@ -152,3 +152,4 @@ colorscript random
 
 # bun completions
 [ -s "/Users/marcos/.bun/_bun" ] && source "/Users/marcos/.bun/_bun"
+eval "$(gh copilot alias -- zsh)"
