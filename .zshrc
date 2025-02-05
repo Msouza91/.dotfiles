@@ -89,6 +89,11 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
  alias tfss="terraform state show"
  alias vim="nvim"
 
+# 1Password windows crap
+ alias op='op.exe'
+ alias ssh='ssh.exe'
+ alias ssh-add='ssh-add.exe'
+
 # Change cat into bat
 alias cat='bat'
 
