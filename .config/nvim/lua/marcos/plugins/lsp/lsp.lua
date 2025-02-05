@@ -51,7 +51,6 @@ return {
 				"docker_compose_language_service",
 				"bashls",
 				"taplo",
-				"nil_ls",
 			},
 			handlers = {
 				lsp.default_setup,

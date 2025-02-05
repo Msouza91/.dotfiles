@@ -23,15 +23,12 @@ if [ -z "$XDG_CACHE_HOME" ] ; then
     export XDG_CACHE_HOME="$HOME/.cache"
 fi
 
-# 1 Password agent (macOS)
-# I save my ssh keys here, remove this to use ssh-agent
-
-export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 # Basic exports
 export HISTCONTROL=ignoredups:erasedups		# no duplicate entries on history
 export ZSH="$HOME/.oh-my-zsh"			# Path to your oh-my-zsh installation, have to install it first.
 export PATH="$HOME/.cargo/bin:$PATH"		# Cargo in path
+export PATH="$HOME/go/bin:$PATH"		# Cargo in path
 export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
 ## TMUX SESSION MANAGER

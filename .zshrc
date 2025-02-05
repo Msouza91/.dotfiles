@@ -57,7 +57,6 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    asdf
     kubectl
     zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
     zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
@@ -68,6 +67,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
