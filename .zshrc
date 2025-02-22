@@ -158,3 +158,8 @@ colorscript random
 
 # bun completions
 [ -s "/Users/marcos/.bun/_bun" ] && source "/Users/marcos/.bun/_bun"
+
+eval "$(gh copilot alias -- zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terragrunt terragrunt
