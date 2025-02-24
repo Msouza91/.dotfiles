@@ -73,15 +73,4 @@ function M.save_and_exec()
 	end
 end
 
-function M.toggleTerm()
-	local terminal = vim.iter(vim.fn.getwininfo()):find(function(v)
-		return v.terminal == 1
-	end)
-	if terminal then
-		vim.api.nvim_win_close(terminal.winid, true)
-	else
-		M.term({ direction = "new", focus = true, cmd = "" })
-	end
-end
-
 return M

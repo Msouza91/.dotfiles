@@ -72,7 +72,6 @@ return {
 				"tfsec",
 				"gofumpt",
 				"revive",
-				"markdownlint",
 				"nixpkgs-fmt",
 			},
 		})

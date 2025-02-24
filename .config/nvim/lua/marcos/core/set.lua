@@ -2,6 +2,16 @@ local opt = vim.opt
 local api = vim.api
 local glb = vim.g
 
+api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.j2",
+	command = "setfiletype jinja",
+})
+
+api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.json",
+	command = "set conceallevel=0",
+})
+
 opt.guicursor = ""
 opt.nu = true
 opt.relativenumber = true
@@ -16,9 +26,9 @@ opt.laststatus = 3
 opt.splitbelow = true
 opt.splitright = true
 
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 
 -- Cursive italic comments haha
