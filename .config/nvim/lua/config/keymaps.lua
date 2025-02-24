@@ -4,7 +4,7 @@
 local keymap = vim.keymap.set
 
 -- Exit normal mode with jk
-keymap("i", "jj", "<ESC>")
+keymap("i", "jk", "<ESC>")
 
 -- Chg to current file directory
 keymap("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
