@@ -23,6 +23,9 @@ if [ -z "$XDG_CACHE_HOME" ] ; then
     export XDG_CACHE_HOME="$HOME/.cache"
 fi
 
+# WSL specific
+export BROWSER='/mnt/c/Windows/explorer.exe' #opens urls with windows default browser
+
 
 # Basic exports
 export HISTCONTROL=ignoredups:erasedups		# no duplicate entries on history
@@ -37,10 +40,6 @@ export QT_STYLE_OVERRIDE="kvantum"
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # ~/.config/tmux/plugins
 export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
-
-# 1password get opentofu password
-export tf_Password=$(op item get --fields label=password y3kmjzhxqi7nrz6onpgbi75eoq --reveal)
-export TF_ENCRYPTION=$(echo "key_provider \"pbkdf2\" \"password\" { passphrase = \""$tf_Password"\" }")
 
 # NVM
 export NVM_DIR="$HOME/.nvm"

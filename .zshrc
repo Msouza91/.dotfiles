@@ -124,6 +124,9 @@ alias cat='bat'
  alias newtag='git tag -a'
  alias uncommit='git reset --soft HEAD~1'
 
+# using newer fzf version because ubuntu is a bitch
+ alias fzf="$HOME/bin/fzf"
+
 # tmux session
 alias tma='tmux attach -t'
 alias tml='tmux ls'
@@ -138,9 +141,11 @@ alias tmate='tmate -a ~/.ssh/tmate-keys'
 # Restart pipewire, wireplumber and pulseaudio
 alias rstpw='systemctl --user restart wireplumber pipewire pipewire-pulse'
 
-# fzf commands
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fzf --zsh)"
+# Moving this here since the OP cli is on windows side and .zprofile loads before .zshrc
+# 1password get opentofu password
+export tf_Password=$(op item get --fields label=password y3kmjzhxqi7nrz6onpgbi75eoq --reveal)
+export TF_ENCRYPTION=$(echo "key_provider \"pbkdf2\" \"password\" { passphrase = \""$tf_Password"\" }")
+
 
 # Activate zoxide
 eval "$(zoxide init zsh)"
@@ -163,3 +168,7 @@ eval "$(gh copilot alias -- zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terragrunt terragrunt
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
