@@ -19,7 +19,8 @@ return {
       },
       copilot = {
         endpoint = "https://api.githubcopilot.com",
-        model = "claude-3.7-sonnet",
+        --model = "claude-3.7-sonnet",
+        model = "o3-mini",
         -- claude can use with avante
         -- model = "claude-3.5-sonnet",
         proxy = nil, -- [protocol://]host[:port] Use this proxy
