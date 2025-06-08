@@ -8,9 +8,9 @@ local glb = vim.g
 
 opt.clipboard = ""
 
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 
 -- Cursive italic comments haha
@@ -32,3 +32,16 @@ opt.isfname:append("@-@")
 
 opt.updatetime = 50
 opt.colorcolumn = "80"
+
+glb.clipboard = {
+  name = "win32yank-wsl",
+  copy = {
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf",
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o --crlf",
+    ["*"] = "win32yank.exe -o --crlf",
+  },
+  cache_enable = 0,
+}
