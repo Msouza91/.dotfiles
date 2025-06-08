@@ -143,8 +143,8 @@ alias rstpw='systemctl --user restart wireplumber pipewire pipewire-pulse'
 
 # Moving this here since the OP cli is on windows side and .zprofile loads before .zshrc
 # 1password get opentofu password
-export tf_Password=$(op item get --fields label=password y3kmjzhxqi7nrz6onpgbi75eoq --reveal)
-export TF_ENCRYPTION=$(echo "key_provider \"pbkdf2\" \"password\" { passphrase = \""$tf_Password"\" }")
+#export tf_Password=$(op item get --fields label=password y3kmjzhxqi7nrz6onpgbi75eoq --reveal)
+#export TF_ENCRYPTION=$(echo "key_provider \"pbkdf2\" \"password\" { passphrase = \""$tf_Password"\" }")
 
 
 # Activate zoxide
