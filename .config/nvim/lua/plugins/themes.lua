@@ -9,10 +9,11 @@ return {
       overrides = {},
     }
     require("ayu").setup(opts)
+    vim.cmd("colorscheme ayu")
     if vim.o.background == "dark" then
-      vim.cmd("colorscheme ayu-dark")
+      vim.g.ayu_style = "dark"
     else
-      vim.cmd("colorscheme ayu-light")
+      vim.g.ayu_style = "light"
     end
   end,
 }
