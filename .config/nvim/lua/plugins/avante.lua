@@ -9,25 +9,31 @@ return {
       ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
       provider = "copilot", -- Recommend using Claude
       auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-      openai = {
-        api_key_name = "cmd:pass openai_key",
-        endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o",
-        timeout = 30000, -- Timeout in milliseconds
-        temperature = 0,
-        max_tokens = 4096,
-      },
-      copilot = {
-        endpoint = "https://api.githubcopilot.com",
-        --model = "claude-3.7-sonnet",
-        model = "o3-mini",
-        -- claude can use with avante
-        -- model = "claude-3.5-sonnet",
-        proxy = nil, -- [protocol://]host[:port] Use this proxy
-        allow_insecure = false, -- Allow insecure server connections
-        timeout = 30000, -- Timeout in milliseconds
-        temperature = 0,
-        max_tokens = 8192,
+      providers = {
+        openai = {
+          api_key_name = "cmd:pass openai_key",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o",
+          timeout = 30000, -- Timeout in milliseconds
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 4096,
+          },
+        },
+        copilot = {
+          endpoint = "https://api.githubcopilot.com",
+          --model = "claude-3.7-sonnet",
+          model = "o3-mini",
+          -- claude can use with avante
+          -- model = "claude-3.5-sonnet",
+          proxy = nil, -- [protocol://]host[:port] Use this proxy
+          allow_insecure = false, -- Allow insecure server connections
+          timeout = 30000, -- Timeout in milliseconds
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 8192,
+          },
+        },
       },
       ---Specify the special dual_boost mode
       ---1. enabled: Whether to enable dual_boost mode. Default to false.
