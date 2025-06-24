@@ -6,6 +6,13 @@ local opt = vim.opt
 local api = vim.api
 local glb = vim.g
 
+-- Set some lazyvim deafult options
+
+glb.snacks_animate = false
+glb.autoformat = false
+
+-- Other options
+
 opt.clipboard = ""
 
 opt.tabstop = 2
