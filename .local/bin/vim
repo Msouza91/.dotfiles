@@ -1,0 +1,5 @@
+#!/bin/bash
+
+neovide.exe "$@" &
+disown
+
