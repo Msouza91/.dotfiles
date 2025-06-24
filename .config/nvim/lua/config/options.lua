@@ -40,15 +40,16 @@ opt.isfname:append("@-@")
 opt.updatetime = 50
 opt.colorcolumn = "80"
 
-glb.clipboard = {
-  name = "win32yank-wsl",
-  copy = {
-    ["+"] = "win32yank.exe -i --crlf",
-    ["*"] = "win32yank.exe -i --crlf",
-  },
-  paste = {
-    ["+"] = "win32yank.exe -o --crlf",
-    ["*"] = "win32yank.exe -o --crlf",
-  },
-  cache_enable = 0,
-}
+-- Commented ou for now, using neovide the clipboard detection works fine
+-- glb.clipboard = {
+--   name = "win32yank-wsl",
+--   copy = {
+--     ["+"] = "win32yank.exe -i --crlf",
+--     ["*"] = "win32yank.exe -i --crlf",
+--   },
+--   paste = {
+--     ["+"] = "win32yank.exe -o --crlf",
+--     ["*"] = "win32yank.exe -o --crlf",
+--   },
+--   cache_enable = 0,
+-- }
