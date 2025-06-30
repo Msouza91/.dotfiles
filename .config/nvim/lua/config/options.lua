@@ -6,6 +6,11 @@ local opt = vim.opt
 local api = vim.api
 local glb = vim.g
 
+-- Set some lazyvim deafult options
+
+glb.snacks_animate = false
+glb.autoformat = false
+
 opt.clipboard = ""
 
 opt.tabstop = 4
@@ -32,3 +37,9 @@ opt.isfname:append("@-@")
 
 opt.updatetime = 50
 opt.colorcolumn = "80"
+
+if vim.g.neovide then
+  vim.g.neovide_window_blurred = true
+  vim.g.neovide_opacity = 0.8
+  vim.g.transparency = 0.8
+end
