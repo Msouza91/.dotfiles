@@ -1,0 +1,17 @@
+title-hidden = true
+
+frame = "buttonless"
+
+[font]
+normal = [
+    "BerkeleyMono Nerd Font",
+] # Will use the bundled Fira Code Nerd Font by default
+size = 19.0
+edging = "antialias"
+
+[box-drawing]
+# "font-glyph", "native" or "selected-native"
+mode = "font-glyph"
+
+[box-drawing.sizes]
+default = [2, 4]
