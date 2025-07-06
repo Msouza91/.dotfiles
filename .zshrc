@@ -89,13 +89,8 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
  alias tfss="terraform state show"
  alias vim="nvim"
 
-# 1Password windows crap
- alias op='op.exe'
- alias ssh='ssh.exe'
- alias ssh-add='ssh-add.exe'
-
-# Change cat into bat
-alias cat='bat'
+# Change cat into bat (weird name on ubuntu)
+alias cat='batcat'
 
 # Changing "ls" to "eza"
  alias la='eza -al --color=always --group-directories-first' # my preferred listing
@@ -140,11 +135,6 @@ alias tmate='tmate -a ~/.ssh/tmate-keys'
 
 # Restart pipewire, wireplumber and pulseaudio
 alias rstpw='systemctl --user restart wireplumber pipewire pipewire-pulse'
-
-# Moving this here since the OP cli is on windows side and .zprofile loads before .zshrc
-# 1password get opentofu password
-#export tf_Password=$(op item get --fields label=password y3kmjzhxqi7nrz6onpgbi75eoq --reveal)
-#export TF_ENCRYPTION=$(echo "key_provider \"pbkdf2\" \"password\" { passphrase = \""$tf_Password"\" }")
 
 
 # Activate zoxide
