@@ -25,4 +25,15 @@ clipboard-paste-protection = false
 
 theme = light:Kanso-Pearl,dark:Kanso-Zen
 
-macos-titlebar-style = hidden
+window-decoration = false
+
+custom-shader-animation = true
+custom-shader = shaders/cursor_smear.glsl
+custom-shader = shaders/cursor_blaze_no_trail.glsl
+
+keybind = ctrl+shift+d=new_split:right
+keybind = ctrl+shift+e=new_split:down
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+l=goto_split:right
