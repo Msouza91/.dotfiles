@@ -48,3 +48,6 @@ keybind = ctrl+alt+k=resize_split:up,15
 keybind = ctrl+alt+j=resize_split:down,15
 keybind = ctrl+alt+h=resize_split:left,15
 keybind = ctrl+alt+l=resize_split:right,15
+
+keybind = alt+j=scroll_page_down
+keybind = alt+k=scroll_page_up
