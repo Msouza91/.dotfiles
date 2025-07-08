@@ -41,7 +41,8 @@ keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+l=goto_split:right
 
-keybind = ctrl+shift+o=equalize_splits
+keybind = ctrl+shift+o=toggle_split_zoom
+keybind = ctrl+alt+o=equalize_splits
 
 keybind = ctrl+alt+k=resize_split:up,15
 keybind = ctrl+alt+j=resize_split:down,15
