@@ -31,9 +31,19 @@ custom-shader-animation = true
 custom-shader = shaders/cursor_smear.glsl
 custom-shader = shaders/cursor_blaze_no_trail.glsl
 
+# Keybinds
+# Splits and movement
 keybind = ctrl+shift+d=new_split:right
 keybind = ctrl+shift+e=new_split:down
+
 keybind = ctrl+shift+k=goto_split:up
 keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+l=goto_split:right
+
+keybind = ctrl+shift+o=equalize_splits
+
+keybind = ctrl+alt+k=resize_split:up,15
+keybind = ctrl+alt+j=resize_split:down,15
+keybind = ctrl+alt+h=resize_split:left,15
+keybind = ctrl+alt+l=resize_split:right,15
