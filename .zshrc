@@ -157,6 +157,7 @@ colorscript random
 eval "$(gh copilot alias -- zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 complete -o nospace -C /opt/homebrew/bin/terragrunt terragrunt
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

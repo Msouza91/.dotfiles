@@ -1,3 +1,4 @@
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 # Setting up basic paths
 ### PATH
 if [ -d "$HOME/.bin" ] ;
@@ -23,8 +24,14 @@ if [ -z "$XDG_CACHE_HOME" ] ; then
     export XDG_CACHE_HOME="$HOME/.cache"
 fi
 
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 # Ubuntu
 export SSH_AUTH_SOCK=~/.1password/agent.sock
+
+# Doom
+export PATH="$HOME/.config/emacs/bin/:$PATH"
 
 # 1password get opentofu password
 #export tf_Password=$(op item get --fields label=password y3kmjzhxqi7nrz6onpgbi75eoq --reveal)
