@@ -33,6 +33,10 @@ export SSH_AUTH_SOCK=~/.1password/agent.sock
 # Doom
 export PATH="$HOME/.config/emacs/bin/:$PATH"
 
+# Omakub
+export PATH="$HOME/.local/share/omakub/bin:$PATH"
+export OMAKUB_PATH="$HOME/.local/share/omakub"
+
 # 1password get opentofu password
 #export tf_Password=$(op item get --fields label=password y3kmjzhxqi7nrz6onpgbi75eoq --reveal)
 #export TF_ENCRYPTION=$(echo "key_provider \"pbkdf2\" \"password\" { passphrase = \""$tf_Password"\" }")

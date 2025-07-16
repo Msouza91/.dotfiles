@@ -23,7 +23,7 @@ clipboard-paste-protection = false
 # background-opacity = 0.90
 # background-blur-radius = 20
 
-theme = light:Kanso-Pearl,dark:Kanso-Zen
+theme = light:GruvboxLight,dark:GruvboxDark
 
 window-decoration = false
 
