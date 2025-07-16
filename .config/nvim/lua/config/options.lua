@@ -8,7 +8,6 @@ local glb = vim.g
 
 -- Set some lazyvim deafult options
 
-glb.snacks_animate = false
 glb.autoformat = false
 
 -- Other options
@@ -19,6 +18,7 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
+opt.termguicolors = true
 
 -- Cursive italic comments haha
 api.nvim_set_hl(0, "Comment", { italic = true })
@@ -33,7 +33,7 @@ opt.undofile = true
 
 opt.incsearch = true
 
-opt.scrolloff = 8
+opt.scrolloff = 5
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
