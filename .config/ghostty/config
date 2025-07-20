@@ -8,6 +8,7 @@ window-padding-x = 4
 
 shell-integration = zsh
 
+macos-auto-secure-input = false
 
 cursor-style = block
 cursor-style-blink = false
@@ -23,4 +24,4 @@ background-blur-radius = 20
 
 macos-titlebar-style = hidden
 
-theme = dark:"Kanso Zen",light:"Kanso Pearl"
+theme = dark:"GruvboxDark",light:"GruvboxLight"
