@@ -86,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
  alias tfwl="terraform workspace list"
  alias tfsl="terraform state list"
  alias tfss="terraform state show"
+ alias vim="nvim"
 
 # Change cat into bat
 alias cat='bat'
