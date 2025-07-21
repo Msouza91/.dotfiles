@@ -3,6 +3,9 @@ return {
 	version = "*",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		require("mini.animate").setup()
+		local opts = {
+			cursor = { enable = false },
+		}
+		require("mini.animate").setup(opts)
 	end,
 }
