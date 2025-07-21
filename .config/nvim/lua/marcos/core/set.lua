@@ -44,7 +44,7 @@ opt.undofile = true
 
 opt.incsearch = true
 
-opt.scrolloff = 5
+opt.scrolloff = 10
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
