@@ -3,24 +3,60 @@ function M.azure()
 	local opts = {
 		settings = {
 			yaml = {
-				cmd = { "~/Downloads/package/bin/azure-pipelines-language-server" },
-				capabilities = capabilities,
 				schemas = {
-					["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
-						"/azure-pipeline*.y*l",
-						"/*.azure*",
+					["~/Downloads/Pipelines/service-schema.json"] = {
+						"azure-pipeline*.y*l",
+						"*.azure*",
 						"Azure-Pipelines/**/*.y*l",
 						"Pipelines/*.y*l",
-						"cap/**/*.y*l",
-						"cap/*.y*l",
-						"veiling/**/*.y*l",
-						"veiling/*.y*l",
-						"sol_agora/**/*.y*l",
-						"sol_agora/*.y*l",
-						"aldo_solar/**/*.y*l",
-						"aldo_solar/*.y*l",
+						"ADO/**/*.y*l",
+						"ADO/*.y*l",
 					},
 				},
+			},
+		},
+	}
+	return opts
+end
+function M.yaml()
+	local opts = {
+		filetypes = {},
+		redhat = { telemetry = { enabled = false } },
+		yaml = {
+			schemaStore = {
+				enable = true,
+				url = "",
+			},
+			schemas = require("schemastore").yaml.schemas({
+				replace = {
+					["Markdownlint"] = {
+						description = "Markdownlint overridden",
+						fileMatch = ".markdownlint.y*l",
+						name = "Markdownlint",
+						url = "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+					},
+					["Azure Pipelines"] = {
+						description = "Azure Pipelines overridden",
+						fileMatch = {
+							"azure-pipeline*.y*l",
+							"tasks/**/*.y*l",
+							"jobs/*.y*l",
+							"stages/*.y*l",
+							"pipelines/*.y*l",
+						},
+						name = "Azure Pipelines",
+						url = "~/Downloads/stages/service-schema.json",
+					},
+				},
+				ignore = {
+					-- "Azure Pipelines",
+					-- "Markdownlint",
+				},
+			}),
+			validate = { enable = true },
+			completion = { enable = true },
+			editor = {
+				tabSize = 2,
 			},
 		},
 	}

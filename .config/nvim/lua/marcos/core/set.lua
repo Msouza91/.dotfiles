@@ -2,9 +2,17 @@ local opt = vim.opt
 local api = vim.api
 local glb = vim.g
 
+vim.loader.enable()
+
 opt.guicursor = ""
 opt.nu = true
 opt.relativenumber = true
+opt.list = true
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+opt.inccommand = "split"
+opt.confirm = true
+glb.have_nerd_font = false
 
 -- No need to see the mode since I'm using statusline
 opt.showmode = false
@@ -36,20 +44,14 @@ opt.undofile = true
 
 opt.incsearch = true
 
-opt.scrolloff = 8
+opt.scrolloff = 5
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
-opt.updatetime = 50
+opt.updatetime = 250
 
 opt.colorcolumn = "80"
 
 opt.conceallevel = 2
 
 opt.cursorline = true
-
--- Extra transparency~
-glb.transparent_groups = vim.list_extend(glb.transparent_groups or {}, {
-	"FloatBorder",
-	"NormalFloat",
-})

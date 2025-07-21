@@ -28,6 +28,10 @@ keymap(
 	"<C-d>",
 	"<cmd>lua vim.cmd('normal! <C-d>'); require('mini.animate').execute_after('scroll', 'normal! zz')<cr>"
 )
+keymap("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+keymap("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+keymap("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+keymap("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 keymap(
 	"n",
 	"<C-u>",
@@ -42,7 +46,7 @@ keymap("n", "<leader>tn", "<cmd>tab split<cr>", { desc = "New tab page" })
 keymap("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close other tab pages" })
 
 -- Execute macro over a visual region.
-vim.keymap.set("x", "@", function()
+keymap("x", "@", function()
 	return ":norm @" .. vim.fn.getcharstr() .. "<cr>"
 end, { expr = true })
 
@@ -71,7 +75,7 @@ keymap({ "n", "v" }, "<leader>d", [["_d]])
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- grant execute permission
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+keymap("n", "<leader>xe", "<cmd>!chmod +x %<CR>", { silent = true })
 
 keymap("n", "<leader>vpp", "<cmd>e ~/.dotfiles/.config/nvim/lua/marcos/plugins<CR>")
 
@@ -92,7 +96,7 @@ end)
 keymap("n", "<leader>f", vim.lsp.buf.format)
 
 -- Quickfix navigation
-keymap("n", "<C-j>", "<cmd>cnext<CR>zz")
-keymap("n", "<C-k>", "<cmd>cprev<CR>zz")
+-- keymap("n", "<C-j>", "<cmd>cnext<CR>zz")
+-- keymap("n", "<C-k>", "<cmd>cprev<CR>zz")
 keymap("n", "<leader>j", "<cmd>lnext<CR>zz")
 keymap("n", "<leader>k", "<cmd>lprev<CR>zz")
