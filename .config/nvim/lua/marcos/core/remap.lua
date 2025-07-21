@@ -45,6 +45,25 @@ keymap("n", "<leader>tc", "<cmd>tabclose<cr>", { desc = "Close tab page" })
 keymap("n", "<leader>tn", "<cmd>tab split<cr>", { desc = "New tab page" })
 keymap("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close other tab pages" })
 
+-- Error navigation
+-- Go to previous/next error
+vim.keymap.set("n", "[e", function()
+	vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
+end, { desc = "Previous Error" })
+
+vim.keymap.set("n", "]e", function()
+	vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
+end, { desc = "Next Error" })
+
+-- Go to previous/next warning
+vim.keymap.set("n", "[w", function()
+	vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.WARN })
+end, { desc = "Previous Warning" })
+
+vim.keymap.set("n", "]w", function()
+	vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.WARN })
+end, { desc = "Next Warning" })
+
 -- Execute macro over a visual region.
 keymap("x", "@", function()
 	return ":norm @" .. vim.fn.getcharstr() .. "<cr>"
