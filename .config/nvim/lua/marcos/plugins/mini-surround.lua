@@ -1,5 +1,7 @@
 return {
 	"echasnovski/mini.surround",
+	lazy = true,
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local opts = {
 			mappings = {
