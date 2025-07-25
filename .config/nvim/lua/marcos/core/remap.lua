@@ -15,11 +15,6 @@ keymap("n", "<leader>cd", "<CMD>lcd %:p:h<CR>")
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
-keymap("n", "<leader>md", function()
-	local current_file = vim.fn.expand("%:p")
-	vim.fn.system('tmux split-window -h "glow ' .. current_file .. ' && read"')
-end, { silent = true })
-
 -- Better navigation
 
 keymap("n", "J", "mzJ`z")
