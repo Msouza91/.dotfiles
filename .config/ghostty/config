@@ -2,7 +2,7 @@ font-family = BerkeleyMono Nerd Font
 #font-family-italic = Maple Mono NF
 #font-codepoint-map = U+0021-U+0021,U+0023-U+0026,U+0040,U+0028-U+0029,U+002A-U+002D,U+005B-U+005E,U+007B-U+007D,U+002C-U+002F,U+003A-U+003B,U+003C-U+003F,U+0060,U+007E=Maple Mono NF
 font-style = Regular
-font-size = 17
+font-size = 15
 
 adjust-underline-position = 40%
 adjust-underline-thickness = -60%
@@ -23,7 +23,7 @@ clipboard-paste-protection = false
 # background-opacity = 0.90
 # background-blur-radius = 20
 
-theme = light:GruvboxLight,dark:GruvboxDark
+theme = light:GruvboxLightHard,dark:GruvboxDarkHard
 
 window-decoration = false
 
