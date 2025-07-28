@@ -10,7 +10,6 @@ return {
 		lint.linters_by_ft = {
 			javascript = { "eslint_d" },
 			terraform = { "tfsec", "tflint" },
-			markdown = { "markdownlint" },
 			go = { "revive" },
 		}
 
