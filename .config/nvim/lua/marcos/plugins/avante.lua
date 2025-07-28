@@ -22,8 +22,8 @@ return {
 				},
 				copilot = {
 					endpoint = "https://api.githubcopilot.com",
-					--model = "claude-3.7-sonnet",
-					model = "o3-mini",
+					model = "claude-sonnet-4",
+					-- model = "o3-mini",
 					-- claude can use with avante
 					-- model = "claude-3.5-sonnet",
 					proxy = nil, -- [protocol://]host[:port] Use this proxy
@@ -32,7 +32,7 @@ return {
 					reasoning_effort = "medium",
 					extra_request_body = {
 						temperature = 0,
-						max_tokens = 8192,
+						max_tokens = 16384,
 					},
 				},
 			},
