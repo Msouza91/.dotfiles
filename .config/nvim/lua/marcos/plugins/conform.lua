@@ -11,6 +11,7 @@ return {
 				json = { "prettier" },
 				go = { "gofumpt" },
 				nix = { "nixpkgs-fmt" },
+				hcl = { "packer_fmt" },
 				-- Use the "_" filetype to run formatters on filetypes that don't
 				-- have other formatters configured.
 				["_"] = { "trim_whitespace" },
