@@ -51,6 +51,8 @@ export EDITOR='nvim'				# Set default editor
 export QT_STYLE_OVERRIDE="kvantum"
 ## TMUX SESSION MANAGER
 
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+
 # ~/.tmux/plugins
 export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 # ~/.config/tmux/plugins

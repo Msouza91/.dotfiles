@@ -90,7 +90,7 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
  alias vim="nvim"
 
 # Change cat into bat (weird name on ubuntu)
-alias cat='batcat'
+alias cat='bat'
 
 # Changing "ls" to "eza"
  alias la='eza -al --color=always --group-directories-first' # my preferred listing
@@ -163,3 +163,5 @@ complete -o nospace -C /opt/homebrew/bin/terragrunt terragrunt
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PATH=$PATH:/home/marcos/.spicetify
