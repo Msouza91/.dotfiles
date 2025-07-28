@@ -199,7 +199,7 @@ return {
 			"tfsec", -- Terraform security scanner
 			"gofumpt", -- Go code formatter
 			"revive", -- Go code review tool
-			"markdownlint", -- Markdown linter
+			"harper-ls", -- Spell checker
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
