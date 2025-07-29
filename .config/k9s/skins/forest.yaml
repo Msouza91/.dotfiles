@@ -1,20 +1,20 @@
 # -----------------------------------------------------------------------------
-# Everforest K9s Skin
+# Everforest Light K9s Skin
 # -----------------------------------------------------------------------------
 
 # Styles...
-foreground: &foreground "#d3c6aa"
+foreground: &foreground "#5c6a72"
 background: &background default
-current_line: &current_line "#3a464c"
-selection: &selection "#3a464c"
-comment: &comment "#859289"
-cyan: &cyan "#83c092"
-green: &green "#a7c080"
-orange: &orange "#e69875"
-pink: &pink "#d699b6"
-purple: &purple "#d699b6"
-red: &red "#e67e80"
-yellow: &yellow "#dbbc7f"
+current_line: &current_line "#f3efda"
+selection: &selection "#f3efda"
+comment: &comment "#939f91"
+cyan: &cyan "#35a77c"
+green: &green "#8da101"
+orange: &orange "#f57d26"
+pink: &pink "#df69ba"
+purple: &purple "#df69ba"
+red: &red "#f85552"
+yellow: &yellow "#dfa000"
 
 # Skin...
 k9s:
