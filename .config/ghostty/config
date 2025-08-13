@@ -6,7 +6,9 @@ font-size = 15
 
 adjust-underline-position = 40%
 adjust-underline-thickness = -60%
-window-padding-x = 4
+window-padding-x = 5
+window-padding-y = 5,3
+window-padding-balance = true
 
 shell-integration = zsh
 
