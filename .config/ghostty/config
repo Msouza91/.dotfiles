@@ -23,7 +23,8 @@ clipboard-paste-protection = false
 # background-opacity = 0.90
 # background-blur-radius = 20
 
-theme = light:GruvboxLightHard,dark:GruvboxDarkHard
+#theme = light:GruvboxLightHard,dark:GruvboxDarkHard
+theme = terafox
 
 window-decoration = false
 
