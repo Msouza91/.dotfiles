@@ -1,0 +1,6 @@
+#!/bin/bash
+pane=$(tmux run-shell 'echo #{session_name}:#{window_index}')
+if [ $(tmux list-windows 2>/dev/null | wc -l) -eq 1 ];
+  then tmux switch-client -n; 2>/dev/null
+fi
+tmux kill-window -t "$pane" 2>/dev/null
