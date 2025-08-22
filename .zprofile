@@ -13,6 +13,10 @@ if [ -d "/var/lib/flatpak/exports/bin/" ] ;
   then PATH="/var/lib/flatpak/exports/bin/:$PATH"
 fi
 
+if [ -d "$HOME/.skim/bin/" ] ;
+  then PATH="$HOME/.skim/bin/:$PATH"
+fi
+
 ### SETTING OTHER ENVIRONMENT VARIABLES
 if [ -z "$XDG_CONFIG_HOME" ] ; then
     export XDG_CONFIG_HOME="$HOME/.config"

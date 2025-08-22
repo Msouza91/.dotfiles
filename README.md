@@ -48,6 +48,8 @@ Clone o repositório e rode `stow .` para criar os links
     - azure-cli
   - Cargo
     - eza
+    - skim
+    - yazi-fm
     - Treesitter
     - install-updates
 

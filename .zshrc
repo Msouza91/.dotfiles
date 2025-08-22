@@ -68,6 +68,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# skim completion
+sk --shell zsh > ~/.zfunc/_sk
+fpath+=~/.zfunc
+
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -88,6 +92,7 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
  alias tfsl="terraform state list"
  alias tfss="terraform state show"
  alias vim="nvim"
+ alias v='selected_file=$(fd --type f --hidden --exclude .git | sk-tmux -p --reverse --preview="bat {} --color=always") && [ -n "$selected_file" ] && nvim "$selected_file"'
 
 # Change cat into bat (weird name on ubuntu)
 alias cat='bat'
