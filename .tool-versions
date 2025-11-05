@@ -1,2 +1,7 @@
 terraform 1.12.2
 awscli 2.27.53
+azure-cli 2.75.0
+kubectl 1.33.3
+kubelogin 0.2.10
+packer 1.13.1
+tfsec 1.28.14
