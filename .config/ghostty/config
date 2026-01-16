@@ -22,11 +22,11 @@ window-decoration = server
 confirm-close-surface = false
 clipboard-paste-protection = false
 
- background-opacity = 0.95
- background-blur-radius = 20
+ # background-opacity = 0.95
+ # background-blur-radius = 20
 
-#theme = light:GruvboxLightHard,dark:GruvboxDarkHard
-theme = Alabaster-Dark
+theme = light:Alabaster,dark:Alabaster-Dark
+# theme = Alabaster-Dark
 
 window-decoration = false
 
